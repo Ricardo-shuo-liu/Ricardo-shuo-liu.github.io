@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper - Ricardo-shuo-liu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <span>RSL</span>
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html" class="nav-item">Home</a>
+                <a href="../pages/about.html" class="nav-item">About</a>
+                <a href="index.html" class="nav-item active">Research</a>
+                <a href="../pages/projects.html" class="nav-item">Projects</a>
+                <a href="../pages/experience.html" class="nav-item">Experience</a>
+                <a href="../pages/contact.html" class="nav-item">Contact</a>
+                <a href="../pages/publications.html" class="nav-item">Publications</a>
+                <a href="../blog/index.html" class="nav-item">Blog</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="research-hero" class="hero">
+        <!-- 3D Background Canvas -->
+        <canvas id="heroCanvas"></canvas>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="glitch" data-text="Research Paper">Research Paper</h1>
+                    <p class="subtitle">Academic Publication 📄</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Paper Content Section -->
+    <section class="research-paper-section">
+        <div class="container">
+            <article class="research-paper">
+                <div class="research-paper-header">
+                    <div class="research-meta">
+                        <span class="research-date"><i class="far fa-calendar"></i> January 13, 2026</span>
+                        <span class="research-category"><i class="fas fa-tag"></i> AI Research</span>
+                    </div>
+                    <h2 class="research-paper-title">📄 Template for Research Papers</h2>
+                    <div class="research-paper-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Research Paper</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="research-paper-content">
+                    <h3>Abstract</h3>
+                    <p>This is a template for research papers. When you have published papers, you can create individual HTML files based on this template to showcase your research work. Each paper should include an abstract, introduction, methodology, results, discussion, and conclusion sections.</p>
+                    
+                    <h3>Introduction</h3>
+                    <p>Provide an overview of the research topic, the problem being addressed, and the significance of your work. Include a brief literature review and state your research objectives and contributions.</p>
+                    
+                    <h3>Methodology</h3>
+                    <p>Describe your research methods, experimental setup, data collection techniques, and analysis procedures. Be detailed enough for other researchers to replicate your work.</p>
+                    
+                    <h3>Results</h3>
+                    <p>Present your findings using tables, figures, and statistical analysis. Clearly state the key results and their implications for your research question.</p>
+                    
+                    <h3>Discussion</h3>
+                    <p>Interpret your results, compare them with previous research, and discuss any limitations or unexpected findings. Explain the broader implications of your work and suggest future research directions.</p>
+                    
+                    <h3>Conclusion</h3>
+                    <p>Summarize the main points of your paper, restate your contributions, and highlight the significance of your research. Provide a concise closing statement.</p>
+                    
+                    <h3>References</h3>
+                    <ol>
+                        <li>Author, A., & Author, B. (Year). Title of article. Journal Name, Volume(Issue), Page numbers. DOI or URL</li>
+                        <li>Author, C., Author, D., & Author, E. (Year). Title of book. Publisher Name.</li>
+                        <li>Conference Paper: Author, F., Author, G., & Author, H. (Year). Title of conference paper. In Proceedings of the Conference Name (pp. Page numbers).</li>
+                    </ol>
+                </div>
+            </article>
+            
+            <div class="research-paper-navigation">
+                <a href="index.html" class="btn secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Research Papers
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Ricardo-shuo-liu</h3>
+                    <p>AI Research & Development</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Ricardo-shuo-liu" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://blog.csdn.net/ricardoshuoliu" target="_blank"><i class="fab fa-csdn"></i></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Ricardo-shuo-liu. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

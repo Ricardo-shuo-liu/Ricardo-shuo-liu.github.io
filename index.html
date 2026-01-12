@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo-shuo-liu - AI Research & Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <span>RSL</span>
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-item active">Home</a>
+                <a href="pages/about.html" class="nav-item">About</a>
+                <a href="research/index.html" class="nav-item">Research</a>
+                <a href="pages/projects.html" class="nav-item">Projects</a>
+                <a href="pages/experience.html" class="nav-item">Experience</a>
+                <a href="pages/contact.html" class="nav-item">Contact</a>
+                <a href="pages/publications.html" class="nav-item">Publications</a>
+                <a href="blog/index.html" class="nav-item">Blog</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- 3D Background Canvas -->
+        <canvas id="heroCanvas"></canvas>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="glitch" data-text="Hi, I'm Ricardo-shuo-liu">Hi, I'm <span>Ricardo-shuo-liu</span> 🤖</h1>
+                    <p class="subtitle">AI Researcher & Developer 👨‍💻</p>
+                    <p class="slogan">Exploring AI Agents 🤖 & Reinforcement Learning 🎮, Building Intelligent Systems with Code 💻</p>
+                    <div class="hero-buttons">
+                        <a href="https://github.com/Ricardo-shuo-liu" target="_blank" class="btn btn-primary neon">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                        <a href="#contact" class="btn btn-secondary neon">
+                            <i class="fas fa-envelope"></i>
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="neural-network"></div>
+                    <div class="keyword-cloud" id="keywordCloud">
+                        <span class="keyword">LLM Agent</span>
+                        <span class="keyword">LangChain</span>
+                        <span class="keyword">PyTorch</span>
+                        <span class="keyword">Reinforcement Learning</span>
+                        <span class="keyword">Unity ML-Agents</span>
+                        <span class="keyword">CPython</span>
+                        <span class="keyword">PaddlePaddle</span>
+                        <span class="keyword">FLAML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>🤖 I'm a sophomore at Henan University of Economics and Law (HUEL), specializing in AI research and development. As a member of the Chinese Association for Artificial Intelligence (CAAI), I focus on building intelligent systems through cutting-edge technologies.</p>
+                <p>🧠 My core research interests include LLM-based Agent development, deep learning and reinforcement learning, game AI, and CPython internal mechanisms. I'm proficient in Python, C, C++, and various AI frameworks like PyTorch, LangChain, and Unity ML-Agents.</p>
+                <p>💻 I'm passionate about open-source development and have been actively contributing to AI-related projects on GitHub. I aim to bridge the gap between theoretical research and practical applications in the field of artificial intelligence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Research Directions</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>🤖 LLM-based Agent Development</h3>
+                    <div class="tech-tags">
+                        <span class="tag">LangChain</span>
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <p>End-to-end Agent construction, task planning, multi-agent collaboration, and prompt engineering optimization. 🤝</p>
+                </div>
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>🧠 Deep Learning & Reinforcement Learning</h3>
+                    <div class="tech-tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">PaddlePaddle</span>
+                        <span class="tag">FLAML</span>
+                    </div>
+                    <p>Algorithm implementation, model training/compression/deployment, AutoML efficiency optimization, and reinforcement learning practice. 🚀</p>
+                </div>
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>🎮 Game AI & Virtual Environment</h3>
+                    <div class="tech-tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">ML-Agents</span>
+                        <span class="tag">C#</span>
+                    </div>
+                    <p>Virtual environment agent development, behavior decision optimization, and reinforcement learning applications in game scenarios. 🎯</p>
+                </div>
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>🔧 CPython Internal Mechanisms</h3>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Interpreter</span>
+                    </div>
+                    <p>CPython runtime mechanisms, bytecode analysis, memory management, and low-level extension development. ⚙️</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="python-core">Python Core</button>
+                <button class="filter-btn" data-filter="deep-learning">Deep Learning</button>
+                <button class="filter-btn" data-filter="programming-language">Programming Language</button>
+            </div>
+            <div class="project-grid" id="projectGrid">
+                <!-- Project 1: Paddle -->
+                <div class="project-card" data-category="deep-learning">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fab fa-python"></i>
+                            <p>Paddle Framework</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>🚣 Paddle</h3>
+                        <p>Forked from PaddlePaddle/Paddle - PArallel Distributed Deep LEarning Framework from Industrial Practice</p>
+                        <div class="tech-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Deep Learning</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://github.com/Ricardo-shuo-liu/Paddle" target="_blank" class="btn btn-sm">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Veo -->
+                <div class="project-card" data-category="programming-language">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-code"></i>
+                            <p>Veo Programming Language</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>💻 Veo</h3>
+                        <p>The Veo programming language - A modern programming language designed for simplicity and performance</p>
+                        <div class="tech-tags">
+                            <span class="tag">Programming Language</span>
+                            <span class="tag">Compiler</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://github.com/Ricardo-shuo-liu/Veo" target="_blank" class="btn btn-sm">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Ricardo-shuo-liu -->
+                <div class="project-card" data-category="python-core">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user"></i>
+                            <p>Personal Repository</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>👤 Ricardo-shuo-liu</h3>
+                        <p>Main GitHub repository for Ricardo-shuo-liu</p>
+                        <div class="tech-tags">
+                            <span class="tag">Personal</span>
+                            <span class="tag">GitHub</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://github.com/Ricardo-shuo-liu/Ricardo-shuo-liu" target="_blank" class="btn btn-sm">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4: docs -->
+                <div class="project-card" data-category="deep-learning">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-book"></i>
+                            <p>Paddle Documentation</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>📄 docs</h3>
+                        <p>Forked from PaddlePaddle/docs - Documentation for PaddlePaddle deep learning framework</p>
+                        <div class="tech-tags">
+                            <span class="tag">Documentation</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Deep Learning</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://github.com/Ricardo-shuo-liu/docs" target="_blank" class="btn btn-sm">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon"></div>
+                    <div class="timeline-content">
+                        <h3>2024 - Present</h3>
+                        <h4>Student at Henan University of Economics and Law</h4>
+                        <p>Started learning computer science in 2024, focusing on artificial intelligence, machine learning, and software development fundamentals.</p>
+                    </div>
+                </div>
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon"></div>
+                    <div class="timeline-content">
+                        <h3>2025 - Present</h3>
+                        <h4>GitHub Open-Source Developer</h4>
+                        <p>Started contributing to open-source projects on GitHub in 2025, focusing on deep learning frameworks and programming languages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-content">
+                <div class="skills-radar">
+                    <div class="radar-chart">
+                        <svg width="300" height="300" viewBox="0 0 300 300">
+                            <!-- Radar grid -->
+                            <defs>
+                                <radialGradient id="radarGradient" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#165DFF" stop-opacity="0.2" />
+                                    <stop offset="100%" stop-color="#36CFC9" stop-opacity="0.1" />
+                                </radialGradient>
+                            </defs>
+                            <!-- Axes -->
+                            <line x1="150" y1="50" x2="150" y2="250" stroke="#36CFC9" stroke-width="1" />
+                            <line x1="50" y1="150" x2="250" y2="150" stroke="#36CFC9" stroke-width="1" />
+                            <line x1="85" y1="85" x2="215" y2="215" stroke="#36CFC9" stroke-width="1" />
+                            <line x1="215" y1="85" x2="85" y2="215" stroke="#36CFC9" stroke-width="1" />
+                            <!-- Grid circles -->
+                            <circle cx="150" cy="150" r="50" fill="none" stroke="#36CFC9" stroke-width="0.5" opacity="0.5" />
+                            <circle cx="150" cy="150" r="100" fill="none" stroke="#36CFC9" stroke-width="0.5" opacity="0.5" />
+                            <!-- Radar data -->
+                            <polygon points="150,50 250,150 215,215 85,215 50,150" fill="url(#radarGradient)" stroke="#165DFF" stroke-width="2" />
+                            <!-- Labels -->
+                            <text x="150" y="40" text-anchor="middle" fill="#165DFF">Python</text>
+                            <text x="260" y="155" text-anchor="middle" fill="#165DFF">AI Frameworks</text>
+                            <text x="225" y="225" text-anchor="middle" fill="#165DFF">Game AI</text>
+                            <text x="75" y="225" text-anchor="middle" fill="#165DFF">Python Core</text>
+                            <text x="40" y="155" text-anchor="middle" fill="#165DFF">Programming</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="skills-list">
+                    <div class="skills-category">
+                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level expert">Expert</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C</span>
+                            <span class="skill-level proficient">Proficient</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C++</span>
+                            <span class="skill-level proficient">Proficient</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C#</span>
+                            <span class="skill-level intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3><i class="fas fa-brain"></i> AI Frameworks</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">LangChain/LangGraph</span>
+                            <span class="skill-level expert">Expert</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PyTorch</span>
+                            <span class="skill-level expert">Expert</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PaddlePaddle</span>
+                            <span class="skill-level proficient">Proficient</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">FLAML</span>
+                            <span class="skill-level proficient">Proficient</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Unity ML-Agents</span>
+                            <span class="skill-level proficient">Proficient</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3><i class="fas fa-tools"></i> Development Tools</h3>
+                        <div class="skill-item">
+                            <span class="skill-name">Git & GitHub</span>
+                            <span class="skill-level expert">Expert</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">VSCode</span>
+                            <span class="skill-level expert">Expert</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Linux</span>
+                            <span class="skill-level proficient">Proficient</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Unity 3D</span>
+                            <span class="skill-level intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-grid">
+                <a href="mailto:13838152117@139.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>139 Email</h3>
+                    <p>13838152117@139.com</p>
+                </a>
+                <a href="mailto:ricardoshuoliu@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Gmail</h3>
+                    <p>ricardoshuoliu@gmail.com</p>
+                </a>
+                <a href="https://github.com/Ricardo-shuo-liu" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>Ricardo-shuo-liu</p>
+                </a>
+                <a href="https://blog.csdn.net/ricardoshuoliu" target="_blank" class="contact-item">
+                    <i class="fab fa-csdn"></i>
+                    <h3>CSDN</h3>
+                    <p>Ricardo. 刘</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Ricardo-shuo-liu</h3>
+                    <p>AI Research & Development</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Ricardo-shuo-liu" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://blog.csdn.net/ricardoshuoliu" target="_blank"><i class="fab fa-csdn"></i></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Ricardo-shuo-liu. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
