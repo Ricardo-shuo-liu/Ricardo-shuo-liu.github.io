@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with LLM-based Agents - Ricardo-shuo-liu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <span>RSL</span>
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html" class="nav-item">Home</a>
+                <a href="../pages/about.html" class="nav-item">About</a>
+                <a href="../research/index.html" class="nav-item">Research</a>
+                <a href="../pages/projects.html" class="nav-item">Projects</a>
+                <a href="../pages/experience.html" class="nav-item">Experience</a>
+                <a href="../pages/contact.html" class="nav-item">Contact</a>
+                <a href="../pages/publications.html" class="nav-item">Publications</a>
+                <a href="index.html" class="nav-item active">Blog</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="blog-hero" class="hero">
+        <!-- 3D Background Canvas -->
+        <canvas id="heroCanvas"></canvas>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="glitch" data-text="Blog Post">Blog Post</h1>
+                    <p class="subtitle">Tech Insights & Thoughts 📝</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Content Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <article class="blog-post">
+                <div class="blog-post-header">
+                    <div class="blog-meta">
+                        <span class="blog-date"><i class="far fa-calendar"></i> January 12, 2026</span>
+                        <span class="blog-category"><i class="fas fa-tag"></i> AI Research</span>
+                    </div>
+                    <h2 class="blog-post-title">🤖 Getting Started with LLM-based Agents</h2>
+                    <div class="blog-post-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-robot"></i>
+                            <span>AI Research</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-post-content">
+                    <p>Welcome to this comprehensive guide on getting started with LLM-based agents! In recent years, large language models (LLMs) have revolutionized the field of artificial intelligence, and one of their most exciting applications is in building intelligent agents that can perform complex tasks autonomously.</p>
+                    
+                    <h3>What are LLM-based Agents?</h3>
+                    <p>LLM-based agents are intelligent systems that leverage large language models to perceive their environment, reason about tasks, and take actions to achieve specific goals. These agents can interact with users, access external tools, and even collaborate with other agents to solve problems.</p>
+                    
+                    <h3>Key Components of LLM-based Agents</h3>
+                    <ul>
+                        <li><strong>Large Language Model (LLM)</strong>: The core reasoning engine that processes natural language and generates responses.</li>
+                        <li><strong>Memory System</strong>: Stores and retrieves information about past interactions and experiences.</li>
+                        <li><strong>Tool Integration</strong>: Allows agents to access external APIs and services.</li>
+                        <li><strong>Planning Module</strong>: Breaks down complex tasks into manageable steps.</li>
+                        <li><strong>Execution Engine</strong>: Carries out planned actions and monitors their outcomes.</li>
+                    </ul>
+                    
+                    <h3>Popular Frameworks for Building LLM Agents</h3>
+                    <p>There are several powerful frameworks available for building LLM-based agents:</p>
+                    
+                    <h4>1. LangChain</h4>
+                    <p>LangChain is a popular framework for developing applications powered by language models. It provides tools for chaining together different components like models, prompts, and memory systems. With LangChain, you can build agents that can:</p>
+                    <ul>
+                        <li>Interact with external data sources</li>
+                        <li>Use tools like search engines and calculators</li>
+                        <li>Maintain conversation history</li>
+                        <li>Break down complex tasks into steps</li>
+                    </ul>
+                    
+                    <h4>2. LangGraph</h4>
+                    <p>LangGraph is an extension of LangChain that enables the creation of stateful, multi-actor applications. It's particularly useful for building complex agent systems where multiple agents need to collaborate or where the agent's state needs to be managed over time.</p>
+                    
+                    <h4>3. AutoGPT</h4>
+                    <p>AutoGPT is an open-source project that demonstrates the capabilities of autonomous AI agents. It can independently research topics, generate content, and execute tasks based on high-level objectives.</p>
+                    
+                    <h3>Building Your First LLM Agent</h3>
+                    <p>Let's walk through the basic steps to build a simple LLM agent using LangChain:</p>
+                    
+                    <h4>Step 1: Set Up Your Environment</h4>
+                    <p>First, you'll need to install the necessary packages:</p>
+                    <pre><code>pip install langchain langchain-openai python-dotenv</code></pre>
+                    
+                    <h4>Step 2: Configure API Keys</h4>
+                    <p>Create a <code>.env</code> file to store your API keys:</p>
+                    <pre><code>OPENAI_API_KEY=your-openai-api-key</code></pre>
+                    
+                    <h4>Step 3: Define Your Agent</h4>
+                    <p>Now, let's create a simple agent that can answer questions and use tools:</p>
+                    <pre><code>from langchain_openai import ChatOpenAI
+from langchain.agents import AgentType, initialize_agent, load_tools
+from langchain_core.tools import Tool
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Initialize the LLM
+llm = ChatOpenAI(temperature=0.7, model="gpt-3.5-turbo")
+
+# Load tools
+tools = load_tools(["serpapi", "llm-math"], llm=llm)
+
+# Initialize the agent
+agent = initialize_agent(
+    tools,
+    llm,
+    agent=AgentType.CHAT_ZERO_SHOT_REACT_DESCRIPTION,
+    verbose=True
+)
+
+# Run the agent
+result = agent.run("What's the current temperature in Beijing, and what's that temperature in Fahrenheit?")
+print(result)</code></pre>
+                    
+                    <h3>Best Practices for Building LLM Agents</h3>
+                    <ul>
+                        <li><strong>Start Simple</strong>: Begin with basic agents and gradually add complexity.</li>
+                        <li><strong>Use Clear Prompts</strong>: Well-crafted prompts significantly improve agent performance.</li>
+                        <li><strong>Implement Proper Memory</strong>: Agents need to remember past interactions to maintain context.</li>
+                        <li><strong>Add Error Handling</strong>: Agents can make mistakes, so implement safeguards.</li>
+                        <li><strong>Test Thoroughly</strong>: Test your agents with various scenarios to ensure reliability.</li>
+                        <li><strong>Monitor Performance</strong>: Continuously evaluate and improve your agent's performance.</li>
+                    </ul>
+                    
+                    <h3>Future Trends in LLM-based Agents</h3>
+                    <p>The field of LLM-based agents is evolving rapidly, with several exciting trends on the horizon:</p>
+                    
+                    <ul>
+                        <li><strong>Multi-agent Systems</strong>: Collaborating agents that can divide tasks and solve complex problems together.</li>
+                        <li><strong>Long-term Memory</strong>: Agents that can retain and use information over extended periods.</li>
+                        <li><strong>Improved Tool Use</strong>: More sophisticated integration with external tools and APIs.</li>
+                        <li><strong>Better Reasoning</strong>: Enhanced ability to plan, troubleshoot, and adapt to changing circumstances.</li>
+                        <li><strong>Domain Specialization</strong>: Agents tailored for specific industries like healthcare, finance, and education.</li>
+                    </ul>
+                    
+                    <h3>Conclusion</h3>
+                    <p>LLM-based agents represent a significant leap forward in AI capabilities, offering exciting possibilities for automation, problem-solving, and human-AI collaboration. By understanding the core components, frameworks, and best practices outlined in this guide, you'll be well-equipped to start building your own intelligent agents.</p>
+                    
+                    <p>Remember, building effective LLM agents is an iterative process that requires experimentation and refinement. Start small, learn from your experiences, and gradually tackle more complex challenges. The future of AI agents is bright, and you have the opportunity to be part of this exciting journey!</p>
+                </div>
+            </article>
+            
+            <div class="blog-post-navigation">
+                <a href="index.html" class="btn secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+                <a href="rl-in-game-development.html" class="btn primary">
+                    Next Post <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Ricardo-shuo-liu</h3>
+                    <p>AI Research & Development</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Ricardo-shuo-liu" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://blog.csdn.net/ricardoshuoliu" target="_blank"><i class="fab fa-csdn"></i></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Ricardo-shuo-liu. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

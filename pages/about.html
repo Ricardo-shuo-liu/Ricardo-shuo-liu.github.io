@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Ricardo-shuo-liu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <span>RSL</span>
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html" class="nav-item">Home</a>
+                <a href="about.html" class="nav-item active">About</a>
+                <a href="../research/index.html" class="nav-item">Research</a>
+                <a href="projects.html" class="nav-item">Projects</a>
+                <a href="experience.html" class="nav-item">Experience</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+                <a href="publications.html" class="nav-item">Publications</a>
+                <a href="../blog/index.html" class="nav-item">Blog</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about-hero" class="hero">
+        <!-- 3D Background Canvas -->
+        <canvas id="heroCanvas"></canvas>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="glitch" data-text="About Me">About Me</h1>
+                    <p class="subtitle">AI Researcher & Developer 🤖</p>
+                    <p class="slogan">Exploring the frontiers of artificial intelligence and software development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h2>Educational Background</h2>
+                    <p>I'm a sophomore at Henan University of Economics and Law (HUEL), specializing in AI research and development. I've been passionate about technology since a young age, and my journey into AI began with learning Python and machine learning basics.</p>
+                    <p>Currently, I'm focusing on advanced AI topics while maintaining a strong foundation in computer science fundamentals.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2>AI Research Journey</h2>
+                    <p>My AI research journey started with classic machine learning algorithms, then progressed to deep learning and reinforcement learning. Today, I'm deeply immersed in LLM-based Agent development, exploring how to build intelligent systems that can reason and act autonomously.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2>Community Involvement</h2>
+                <p>I'm an active member of various AI communities, where I collaborate with other researchers and developers to advance the field of artificial intelligence.</p>
+                <ul>
+                    <li>Member of GTOC Community AI Infra</li>
+                    <li>Member of Baidu PFCC</li>
+                </ul>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h2>Technical Philosophy</h2>
+                    <p>I believe in the power of open-source development and collaborative innovation. My projects on GitHub reflect my commitment to sharing knowledge and building tools that benefit the AI community.</p>
+                    <p>My technical philosophy centers on combining theoretical research with practical applications, ensuring that my work has real-world impact.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h2>Future Goals</h2>
+                    <p>Looking ahead, I aim to deepen my expertise in LLM Agents and reinforcement learning, while exploring new frontiers in AI research. I'm particularly interested in the intersection of AI and game development, and how intelligent agents can enhance virtual experiences.</p>
+                    <p>Ultimately, I want to contribute to the development of AI systems that are safe, beneficial, and accessible to everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Directions Section -->
+    <section class="research-directions-section">
+        <div class="container">
+            <h2 class="section-title">Research Directions</h2>
+            <div class="research-directions-grid">
+                <!-- LLM-based Agent Development -->
+                <div class="research-direction-card">
+                    <div class="research-direction-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>LLM-based Agent Development</h3>
+                    <div class="research-tags">
+                        <span class="tag">LangChain</span>
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <p>Building end-to-end intelligent systems that can autonomously reason, plan, and execute complex tasks using large language models.</p>
+                </div>
+                
+                <!-- Deep Learning & Reinforcement Learning -->
+                <div class="research-direction-card">
+                    <div class="research-direction-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Deep Learning & Reinforcement Learning</h3>
+                    <div class="research-tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">PaddlePaddle</span>
+                        <span class="tag">FLAML</span>
+                    </div>
+                    <p>Bridging the gap between theoretical algorithms and practical applications, focusing on efficient and robust AI models.</p>
+                </div>
+                
+                <!-- Game AI & Virtual Environment -->
+                <div class="research-direction-card">
+                    <div class="research-direction-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Game AI & Virtual Environment</h3>
+                    <div class="research-tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">ML-Agents</span>
+                        <span class="tag">C#</span>
+                    </div>
+                    <p>Developing intelligent agents that can navigate and interact with complex virtual environments using Unity ML-Agents.</p>
+                </div>
+                
+                <!-- CPython Internal Mechanisms -->
+                <div class="research-direction-card">
+                    <div class="research-direction-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>CPython Internal Mechanisms</h3>
+                    <div class="research-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Interpreter</span>
+                    </div>
+                    <p>Deepening understanding of how Python works at a fundamental level, from bytecode execution to memory management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Technical Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <ul>
+                        <li>Python - Expert 🐍</li>
+                        <li>C/C++ - Proficient 💻</li>
+                        <li>C# - Intermediate 🎮</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-brain"></i> AI Frameworks</h3>
+                    <ul>
+                        <li>LangChain/LangGraph - Expert 🔗</li>
+                        <li>PyTorch - Expert 🔥</li>
+                        <li>PaddlePaddle - Proficient 🚣</li>
+                        <li>Unity ML-Agents - Proficient 🎯</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-tools"></i> Development Tools</h3>
+                    <ul>
+                        <li>Git & GitHub - Expert 📊</li>
+                        <li>Linux - Proficient 🐧</li>
+                        <li>VSCode - Expert 🖥️</li>
+                        <li>Unity 3D - Intermediate 🎮</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-book"></i> Academic Skills</h3>
+                    <ul>
+                        <li>LaTeX - Proficient 📄</li>
+                        <li>Technical Writing - Expert ✍️</li>
+                        <li>Research Methodology - Intermediate 🔬</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Ricardo-shuo-liu</h3>
+                    <p>AI Research & Development</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Ricardo-shuo-liu" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://blog.csdn.net/ricardoshuoliu" target="_blank"><i class="fab fa-csdn"></i></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Ricardo-shuo-liu. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
