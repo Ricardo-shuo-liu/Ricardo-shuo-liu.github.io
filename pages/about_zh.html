@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - Ricardo-shuo-liu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <span>RSL</span>
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index_zh.html" class="nav-item">首页</a>
+                <a href="about_zh.html" class="nav-item active">关于我</a>
+                <a href="../research/index_zh.html" class="nav-item">研究</a>
+                <a href="projects_zh.html" class="nav-item">项目</a>
+                <a href="experience_zh.html" class="nav-item">经历</a>
+                <a href="contact_zh.html" class="nav-item">联系</a>
+                <a href="publications_zh.html" class="nav-item">出版物</a>
+                <a href="../blog/index_zh.html" class="nav-item">博客</a>
+                <a href="about.html" class="nav-item language-switch">English</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section id="about-hero" class="hero">
+        <!-- 3D背景画布 -->
+        <canvas id="heroCanvas"></canvas>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="glitch" data-text="关于我">关于我</h1>
+                    <p class="subtitle">AI研究员 & 开发者 🤖</p>
+                    <p class="slogan">探索人工智能和软件开发的前沿</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于内容区域 -->
+    <section class="about-content-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h2>教育背景</h2>
+                    <p>我是河南财经政法大学（HUEL）的二年级学生，专注于AI研究和开发。我从小就对技术充满热情，我的AI之旅始于学习Python和机器学习基础。</p>
+                    <p>目前，我在专注于高级AI主题的同时，保持着坚实的计算机科学基础。</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2>AI研究之旅</h2>
+                    <p>我的AI研究之旅始于经典机器学习算法，然后进展到深度学习和强化学习。今天，我深入研究基于LLM的智能体开发，探索如何构建能够自主推理和行动的智能系统。</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2>社区参与</h2>
+                <p>我是各种AI社区的活跃成员，在那里我与其他研究人员和开发者合作，推动人工智能领域的发展。</p>
+                <ul>
+                    <li>GTOC社区AI基础设施成员</li>
+                    <li>百度PFCC成员</li>
+                </ul>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h2>技术理念</h2>
+                    <p>我相信开源开发和协作创新的力量。我在GitHub上的项目反映了我对分享知识和构建造福AI社区的工具的承诺。</p>
+                    <p>我的技术理念以理论研究与实际应用相结合为中心，确保我的工作具有实际影响。</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h2>未来目标</h2>
+                    <p>展望未来，我旨在深化我在LLM智能体和强化学习方面的专业知识，同时探索AI研究的新前沿。我对AI与游戏开发的交叉领域特别感兴趣，以及智能体如何增强虚拟体验。</p>
+                    <p>最终，我希望为开发安全、有益且人人可用的AI系统做出贡献。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 研究方向区域 -->
+    <section class="research-directions-section">
+        <div class="container">
+            <h2 class="section-title">研究方向</h2>
+            <div class="research-directions-grid">
+                <!-- 基于LLM的智能体开发 -->
+                <div class="research-direction-card">
+                    <div class="research-direction-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>基于LLM的智能体开发</h3>
+                    <div class="research-tags">
+                        <span class="tag">LangChain</span>
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <p>使用大型语言模型构建能够自主推理、规划和执行复杂任务的端到端智能系统。</p>
+                </div>
+                
+                <!-- 深度学习与强化学习 -->
+                <div class="research-direction-card">
+                    <div class="research-direction-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>深度学习与强化学习</h3>
+                    <div class="research-tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">PaddlePaddle</span>
+                        <span class="tag">FLAML</span>
+                    </div>
+                    <p>弥合理论算法与实际应用之间的差距，专注于高效和健壮的AI模型。</p>
+                </div>
+                
+                <!-- 游戏AI与虚拟环境 -->
+                <div class="research-direction-card">
+                    <div class="research-direction-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>游戏AI与虚拟环境</h3>
+                    <div class="research-tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">ML-Agents</span>
+                        <span class="tag">C#</span>
+                    </div>
+                    <p>开发能够使用Unity ML-Agents在复杂虚拟环境中导航和交互的智能体。</p>
+                </div>
+                
+                <!-- CPython内部机制 -->
+                <div class="research-direction-card">
+                    <div class="research-direction-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>CPython内部机制</h3>
+                    <div class="research-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C</span>
+                        <span class="tag">解释器</span>
+                    </div>
+                    <p>深入理解Python在基础层面的工作原理，从字节码执行到内存管理。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 技术技能区域 -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">技术技能</h2>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h3><i class="fas fa-code"></i> 编程语言</h3>
+                    <ul>
+                        <li>Python - 专家级 🐍</li>
+                        <li>C/C++ - 熟练 💻</li>
+                        <li>C# - 中级 🎮</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-brain"></i> AI框架</h3>
+                    <ul>
+                        <li>LangChain/LangGraph - 专家级 🔗</li>
+                        <li>PyTorch - 专家级 🔥</li>
+                        <li>PaddlePaddle - 熟练 🚣</li>
+                        <li>Unity ML-Agents - 熟练 🎯</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-tools"></i> 开发工具</h3>
+                    <ul>
+                        <li>Git & GitHub - 专家级 📊</li>
+                        <li>Linux - 熟练 🐧</li>
+                        <li>VSCode - 专家级 🖥️</li>
+                        <li>Unity 3D - 中级 🎮</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-book"></i> 学术技能</h3>
+                    <ul>
+                        <li>LaTeX - 熟练 📄</li>
+                        <li>技术写作 - 专家级 ✍️</li>
+                        <li>研究方法 - 中级 🔬</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Ricardo-shuo-liu</h3>
+                    <p>AI研究与开发</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/Ricardo-shuo-liu" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://blog.csdn.net/ricardoshuoliu" target="_blank"><i class="fab fa-csdn"></i></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Ricardo-shuo-liu. 保留所有权利。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
