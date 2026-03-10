@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started with LLM-based Agents | Shuo Liu</title>
+  <!-- 引入Font Awesome图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body data-page="post">
+  <!-- 顶部导航栏 -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="site-title">
+        <a href="../../index.html" id="site-title">Shuo Liu (Ricardo) | Academic Profile</a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../index.html" id="nav-home">Home</a></li>
+          <li><a href="../../pages/publications.html" id="nav-publications">Publications</a></li>
+          <li><a href="../../pages/talks.html" id="nav-talks">Talks</a></li>
+          <li><a href="../../pages/teaching.html" id="nav-teaching">Teaching</a></li>
+          <li><a href="../../pages/portfolio.html" id="nav-portfolio">Portfolio</a></li>
+          <li><a href="../index.html" id="nav-blog">Blog Posts</a></li>
+          <li><a href="../../pages/cv.html" id="nav-cv">CV</a></li>
+        </ul>
+      </nav>
+      <!-- 主题+语言切换按钮组 -->
+      <div class="toggle-group">
+        <button id="theme-toggle" class="theme-toggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="lang-toggle" class="lang-toggle">Switch to 中文</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主内容容器 -->
+  <div class="main-container">
+    <!-- 左侧侧边栏 -->
+    <aside class="sidebar">
+      <img src="../../assets/images/avatar.png" alt="Shuo Liu" class="avatar">
+      <h3 id="sidebar-name">Shuo Liu (Ricardo)</h3>
+      <p class="sidebar-bio" id="sidebar-bio">希望成为一个杰出的开发者，热衷于强化学习和AI infra领域</p>
+      <ul class="contact-list">
+        <li><i class="fa-solid fa-earth-americas"></i> <span id="contact-location">位置: 郑州</span></li>
+        <li><i class="fa-solid fa-building-columns"></i> <span id="contact-university">院校: 河南财经政法大学</span></li>
+        <li><i class="fa-solid fa-envelope"></i> <span id="contact-email">Email: <a href="mailto:13838152117@139.com">13838152117@139.com</a></span></li>
+        <li><i class="fa-brands fa-github"></i> <span id="contact-github">GitHub: <a href="https://github.com/Ricardo-shuo-liu" target="_blank">Ricardo-shuo-liu</a></span></li>
+        <li><i class="fa-solid fa-cloud"></i> <span id="contact-bluesky">Bluesky: <a href="https://bsky.app/profile/ricardoshuoliu.bsky.social" target="_blank">ricardoshuoliu.bsky.social</a></span></li>
+      </ul>
+    </aside>
+
+    <!-- 右侧文章内容区 -->
+    <main class="content">
+      <h1>🤖 Getting Started with LLM-based Agents</h1>
+      <p class="post-meta">发布日期: January 12, 2026 | 分类: AI Research</p>
+      
+      <p>Welcome to this comprehensive guide on getting started with LLM-based agents! In recent years, large language models (LLMs) have revolutionized the field of artificial intelligence, and one of their most exciting applications is in building intelligent agents that can perform complex tasks autonomously.</p>
+      
+      <h2>What are LLM-based Agents?</h2>
+      <p>LLM-based agents are intelligent systems that leverage large language models to perceive their environment, reason about tasks, and take actions to achieve specific goals. These agents can interact with users, access external tools, and even collaborate with other agents to solve problems.</p>
+      
+      <h2>Key Components of LLM-based Agents</h2>
+      <ul>
+        <li><strong>Large Language Model (LLM)</strong>: The core reasoning engine that processes natural language and generates responses.</li>
+        <li><strong>Memory System</strong>: Stores and retrieves information about past interactions and experiences.</li>
+        <li><strong>Tool Integration</strong>: Allows agents to access external APIs and services.</li>
+        <li><strong>Planning Module</strong>: Breaks down complex tasks into manageable steps.</li>
+        <li><strong>Execution Engine</strong>: Carries out planned actions and monitors their outcomes.</li>
+      </ul>
+      
+      <h2>Popular Frameworks for Building LLM Agents</h2>
+      <p>There are several powerful frameworks available for building LLM-based agents:</p>
+      
+      <h3>1. LangChain</h3>
+      <p>LangChain is a popular framework for developing applications powered by language models. It provides tools for chaining together different components like models, prompts, and memory systems. With LangChain, you can build agents that can:</p>
+      <ul>
+        <li>Interact with external data sources</li>
+        <li>Use tools like search engines and calculators</li>
+        <li>Maintain conversation history</li>
+        <li>Break down complex tasks into steps</li>
+      </ul>
+      
+      <h3>2. LangGraph</h3>
+      <p>LangGraph is an extension of LangChain that enables the creation of stateful, multi-actor applications. It's particularly useful for building complex agent systems where multiple agents need to collaborate or where the agent's state needs to be managed over time.</p>
+      
+      <h3>3. AutoGPT</h3>
+      <p>AutoGPT is an open-source project that demonstrates the capabilities of autonomous AI agents. It can independently research topics, generate content, and execute tasks based on high-level objectives.</p>
+      
+      <h2>Building Your First LLM Agent</h2>
+      <p>Let's walk through the basic steps to build a simple LLM agent using LangChain:</p>
+      
+      <h3>Step 1: Set Up Your Environment</h3>
+      <p>First, you'll need to install the necessary packages:</p>
+      <pre><code>pip install langchain langchain-openai python-dotenv</code></pre>
+      
+      <h3>Step 2: Configure API Keys</h3>
+      <p>Create a <code>.env</code> file to store your API keys:</p>
+      <pre><code>OPENAI_API_KEY=your-openai-api-key</code></pre>
+      
+      <h3>Step 3: Define Your Agent</h3>
+      <p>Now, let's create a simple agent that can answer questions and use tools:</p>
+      <pre><code class="python">from langchain_openai import ChatOpenAI
+from langchain.agents import AgentType, initialize_agent, load_tools
+from langchain_core.tools import Tool
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Initialize the LLM
+llm = ChatOpenAI(temperature=0.7, model="gpt-3.5-turbo")
+
+# Load tools
+tools = load_tools(["serpapi", "llm-math"], llm=llm)
+
+# Initialize the agent
+agent = initialize_agent(
+    tools,
+    llm,
+    agent=AgentType.CHAT_ZERO_SHOT_REACT_DESCRIPTION,
+    verbose=True
+)
+
+# Run the agent
+result = agent.run("What's the current temperature in Beijing, and what's that temperature in Fahrenheit?")
+print(result)</code></pre>
+      
+      <h2>Best Practices for Building LLM Agents</h2>
+      <ul>
+        <li><strong>Start Simple</strong>: Begin with basic agents and gradually add complexity.</li>
+        <li><strong>Use Clear Prompts</strong>: Well-crafted prompts significantly improve agent performance.</li>
+        <li><strong>Implement Proper Memory</strong>: Agents need to remember past interactions to maintain context.</li>
+        <li><strong>Add Error Handling</strong>: Agents can make mistakes, so implement safeguards.</li>
+        <li><strong>Test Thoroughly</strong>: Test your agents with various scenarios to ensure reliability.</li>
+        <li><strong>Monitor Performance</strong>: Continuously evaluate and improve your agent's performance.</li>
+      </ul>
+      
+      <h2>Future Trends in LLM-based Agents</h2>
+      <p>The field of LLM-based agents is evolving rapidly, with several exciting trends on the horizon:</p>
+      <ul>
+        <li><strong>Multi-agent Systems</strong>: Collaborating agents that can divide tasks and solve complex problems together.</li>
+        <li><strong>Long-term Memory</strong>: Agents that can retain and use information over extended periods.</li>
+        <li><strong>Improved Tool Use</strong>: More sophisticated integration with external tools and APIs.</li>
+        <li><strong>Better Reasoning</strong>: Enhanced ability to plan, troubleshoot, and adapt to changing circumstances.</li>
+        <li><strong>Domain Specialization</strong>: Agents tailored for specific industries like healthcare, finance, and education.</li>
+      </ul>
+      
+      <h2>Conclusion</h2>
+      <p>LLM-based agents represent a significant leap forward in AI capabilities, offering exciting possibilities for automation, problem-solving, and human-AI collaboration. By understanding the core components, frameworks, and best practices outlined in this guide, you'll be well-equipped to start building your own intelligent agents.</p>
+      <p>Remember, building effective LLM agents is an iterative process that requires experimentation and refinement. Start small, learn from your experiences, and gradually tackle more complex challenges. The future of AI agents is bright, and you have the opportunity to be part of this exciting journey!</p>
+
+      <p><a href="../index.html">← Back to Blog</a></p>
+    </main>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer" id="site-footer">© 2026 Shuo Liu (Ricardo) | Hosted on GitHub Pages</footer>
+
+  <!-- 脚本引入 -->
+  <script src="../../assets/js/lang.js"></script>
+  <script src="../../assets/js/common.js"></script>
+</body>
+</html>

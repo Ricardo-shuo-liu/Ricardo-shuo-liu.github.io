@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python与语法糖 | Shuo Liu</title>
+  <!-- 引入Font Awesome图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body data-page="post">
+  <!-- 顶部导航栏 -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="site-title">
+        <a href="../../index.html" id="site-title">Shuo Liu (Ricardo) | Academic Profile</a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../index.html" id="nav-home">Home</a></li>
+          <li><a href="../../pages/publications.html" id="nav-publications">Publications</a></li>
+          <li><a href="../../pages/talks.html" id="nav-talks">Talks</a></li>
+          <li><a href="../../pages/teaching.html" id="nav-teaching">Teaching</a></li>
+          <li><a href="../../pages/portfolio.html" id="nav-portfolio">Portfolio</a></li>
+          <li><a href="../index.html" id="nav-blog">Blog Posts</a></li>
+          <li><a href="../../pages/cv.html" id="nav-cv">CV</a></li>
+        </ul>
+      </nav>
+      <!-- 主题+语言切换按钮组 -->
+      <div class="toggle-group">
+        <button id="theme-toggle" class="theme-toggle">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="lang-toggle" class="lang-toggle">Switch to English</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主内容容器 -->
+  <div class="main-container">
+    <!-- 左侧侧边栏 -->
+    <aside class="sidebar">
+      <img src="../../assets/images/avatar.png" alt="Shuo Liu" class="avatar">
+      <h3 id="sidebar-name">Shuo Liu (Ricardo)</h3>
+      <p class="sidebar-bio" id="sidebar-bio">希望成为一个杰出的开发者，热衷于强化学习和AI infra领域</p>
+      <ul class="contact-list">
+        <li><i class="fa-solid fa-earth-americas"></i> <span id="contact-location">位置: 郑州</span></li>
+        <li><i class="fa-solid fa-building-columns"></i> <span id="contact-university">院校: 河南财经政法大学</span></li>
+        <li><i class="fa-solid fa-envelope"></i> <span id="contact-email">Email: <a href="mailto:13838152117@139.com">13838152117@139.com</a></span></li>
+        <li><i class="fa-brands fa-github"></i> <span id="contact-github">GitHub: <a href="https://github.com/Ricardo-shuo-liu" target="_blank">Ricardo-shuo-liu</a></span></li>
+        <li><i class="fa-solid fa-cloud"></i> <span id="contact-bluesky">Bluesky: <a href="https://bsky.app/profile/ricardoshuoliu.bsky.social" target="_blank">ricardoshuoliu.bsky.social</a></span></li>
+      </ul>
+    </aside>
+
+    <!-- 右侧文章内容区 -->
+    <main class="content">
+      <h1>Python与语法糖</h1>
+      <p class="post-meta">发布日期: 2026-03-10</p>
+      
+      <p>对于python而言，所谓的语法糖的关键目的是对一串代码进行简化，对于初学者而言，接触的第一个语法糖应该是以下代码：</p>
+      
+      <pre><code class="python">a,b = b,a</code></pre>
+      
+      <p>这个语法糖实现的是对变量的引用内容交换，如果学习了解过c语言应该知道，如果希望在c语言的情况下进行交换，需要声明第三个变量：</p>
+      
+      <pre><code class="cpp">int a =5;
+int b = 5;
+//开始交换
+int c;
+c = a;
+a=b;
+b=c;
+//实现交换</code></pre>
+      
+      <p>其实，对于python而言，Python的<code>a, b = b, a</code> 通过元组打包和解包实现，等价于 <code>temp = (b, a); a = temp[0]; b = temp[1]</code>，但无需用户手动处理临时变量</p>
+      
+      <p>为了简化代码实现pythonic，所以提供语法糖来简化代码。</p>
+      
+      <h2>装饰器</h2>
+      <p>对于python中可能最实用的语法糖要属装饰器了。</p>
+      <p>装饰器出现的根本目的是为了实现在不修改原来函数的代码情况下，为函数增加功能，这样的好处是对于公司来说可以方便管理以及实现代码复用。</p>
+      
+      <h3>闭包</h3>
+      <p>在理解装饰器前，首先要了解什么是函数的闭包。</p>
+      
+      <pre><code class="python">def out_func(a):
+    def in_func():
+        print('a')
+    return in_func</code></pre>
+      
+      <p>上面代码就是一个闭包实例，其实闭包的根本逻辑是，python的名与地址的关系，在之前的博客中讲解过，变量名与地址的关系，其实函数也可以认为是一个“变量”。因为，函数也是把函数逻辑存储在内存中，调用逻辑需要一个地址去指向这个内存存储空间。</p>
+      
+      <h3>函数名与地址的关系</h3>
+      <pre><code class="python">def print_hello_world():
+    print("hello world")
+
+a = print_hello_world
+a()
+#打印hello world</code></pre>
+      
+      <p>之前讲解过，python的引用机制，这里的逻辑其实还是一样，依赖于引用机制，让变量a也可以引用这个函数。然后通过a()来实现对函数的调用。</p>
+      
+      <h3>nonlocal关键字</h3>
+      <p>对于闭包中变量的作用域，Python提供了nonlocal关键字来解决内部函数访问外部变量的问题。</p>
+      
+      <pre><code class="python">def out_func(a):
+    def in_func():
+        nonlocal a
+        print(a)
+        a = 5
+        print(a)
+    return in_func
+func = out_func(2)
+func()
+#打印2  5</code></pre>
+      
+      <h3>装饰器的实现</h3>
+      <pre><code class="python">def out_func(func):
+    def in_func():
+        print('hello---我是被增加的功能')
+        func()
+    return in_func
+
+@out_func
+def print_hello_world():
+    print("hello world")
+
+if __name__ == '__main__':
+    print_hello_world()
+#打印
+#hello---我是被增加的功能
+#hello world</code></pre>
+      
+      <p>这里的装饰器其实是在定义的函数的下一行加入了一个代码，也就是说有以下等价形式：</p>
+      
+      <pre><code class="python">@out_func
+def print_hello_world():
+    print("hello world")
+
+def print_hello_world():
+    print("hello world")
+print_hello_world = out_func(print_hello_world)</code></pre>
+      
+      <h3>类装饰器</h3>
+      <p>除了函数装饰器，还可以使用类来实现装饰器：</p>
+      
+      <pre><code class="python">class add_func:
+    def __init__(self,func):
+        self.func = func
+    def __call__(self, *args, **kwds):
+        print("__call__被调用")
+        self.func()
+@add_func
+def print_hello_world():
+    print("hello world")
+
+if __name__ == '__main__':
+    print_hello_world()</code></pre>
+      
+      <h3>装饰器工厂</h3>
+      <p>装饰器工厂可以接收参数，增加装饰器的灵活性：</p>
+      
+      <pre><code class="python">def layer_1_func(b):
+    def layer_2_func(func):
+        def layer_3_func():
+            print('我是layer3',b)
+            func()
+        return layer_3_func
+    return layer_2_func
+
+@layer_1_func(1)
+def print_hello_world():
+    print("hello world")
+if __name__ == "__main__":
+    print_hello_world()
+#打印
+#我是layer3 1
+#hello world</code></pre>
+      
+      <h3>多层装饰器</h3>
+      <pre><code class="python">def out_func_1(func):
+    print('1111')
+    def in_func_1():
+        print('4444')
+        func()
+
+    return in_func_1
+
+def out_func_2(func):
+    print('2222')
+    def in_func_2():
+        print('3333')
+        func()
+
+    return in_func_2
+@out_func_2
+@out_func_1
+def print_run():
+    print('5555')
+
+if __name__ == '__main__':
+    print_run()
+
+#打印
+#1111
+#2222
+#3333
+#4444
+#5555</code></pre>
+      
+      <h2>with上下文管理</h2>
+      <p>另一个比较常见的语法糖就是with上下文管理工具，其实还是比较简单，就是调用了两个魔术方法，或者通过装饰器利用yield特性实现。</p>
+      
+      <pre><code class="python">class with_func:
+    def __init__(self):
+        pass
+    def __enter__(self):
+        print('frist use')
+    def __exit__(self,exc_type,exc_val,exc_tb):
+        print("third use")
+
+with with_func():
+    print("second use")
+
+#打印
+#frist use
+#second use
+#third use</code></pre>
+      
+      <p>通过利用yield也可以实现这个功能：</p>
+      
+      <pre><code class="python">from contextlib import contextmanager
+
+@contextmanager
+def with_func():
+    print('frist use')
+    yield
+    print('third use')
+
+
+with with_func():
+    print("second use")</code></pre>
+
+      <p><a href="../index.html">← 返回博客列表</a></p>
+    </main>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer" id="site-footer">© 2026 Shuo Liu (Ricardo) | Hosted on GitHub Pages</footer>
+
+  <!-- 脚本引入 -->
+  <script src="../../assets/js/lang.js"></script>
+  <script src="../../assets/js/common.js"></script>
+</body>
+</html>
