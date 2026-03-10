@@ -37,8 +37,7 @@ This is a personal academic website project for Shuo Liu (Ricardo), built with H
 │       └── avatar.png      # Profile avatar
 ├── README.md               # English README
 ├── README_zh.md            # Chinese README
-├── deeptracer.md           # Deeptracer project README
-└── M2x.md                  # M2x project README
+
 ```
 
 ## 📖 How to Use
