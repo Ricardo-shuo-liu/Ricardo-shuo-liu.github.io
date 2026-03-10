@@ -89,7 +89,7 @@ function loadPageContent(pageId) {
   switch(pageId) {
     case 'index':
       contentContainer.innerHTML = `
-        <h1 id="page-title">${lang.title}</h1>
+        ${lang.title ? `<h1 id="page-title">${lang.title}</h1>` : ''}
         
         <h2 id="about-title">${lang.about.title}</h2>
         <div id="about-content">${lang.about.content}</div>
@@ -134,11 +134,11 @@ function loadPageContent(pageId) {
           </div>
         </div>
 
-        <h2>My Blog Posts</h2>
-        <p>Here are some of my technical blog posts:</p>
+        <h2>${lang.blogPosts.title}</h2>
+        <p>${lang.blogPosts.intro}</p>
         <ul>
-          <li><a href="https://blog.csdn.net/2401_88165744/article/details/151224614?spm=1001.2014.3001.5501" target="_blank">Python与语法糖</a> - A detailed explanation of Python syntax sugar and decorators</li>
-          <li><a href="https://blog.csdn.net/2401_88165744/article/details/150499136?spm=1001.2014.3001.5501" target="_blank">Python变量</a> - An in-depth look at Python's variable reference mechanism and memory management</li>
+          <li><a href="https://blog.csdn.net/2401_88165744/article/details/151224614?spm=1001.2014.3001.5501" target="_blank">${lang.blogPosts.post1.title}</a> - ${lang.blogPosts.post1.desc}</li>
+          <li><a href="https://blog.csdn.net/2401_88165744/article/details/150499136?spm=1001.2014.3001.5501" target="_blank">${lang.blogPosts.post2.title}</a> - ${lang.blogPosts.post2.desc}</li>
         </ul>
       `;
       break;
@@ -264,6 +264,8 @@ function initCommonUI() {
   document.getElementById('contact-pubmed').innerHTML = lang.sidebar.contact.pubmed;
   document.getElementById('contact-github').innerHTML = lang.sidebar.contact.github;
   document.getElementById('contact-bluesky').innerHTML = lang.sidebar.contact.bluesky;
+  document.getElementById('contact-huggingface').innerHTML = lang.sidebar.contact.huggingface;
+  document.getElementById('contact-pypi').innerHTML = lang.sidebar.contact.pypi;
   // 更新页脚
   document.getElementById('site-footer').textContent = lang.footer;
 }
