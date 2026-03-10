@@ -37,8 +37,7 @@
 │       └── avatar.png      # 个人头像
 ├── README.md               # 英文README
 ├── README_zh.md            # 中文README
-├── deeptracer.md           # Deeptracer项目README
-└── M2x.md                  # M2x项目README
+
 ```
 
 ## 📖 使用方法
