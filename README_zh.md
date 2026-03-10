@@ -1,128 +1,86 @@
-# Ricardo-shuo-liu.github.io
+# 刘硕 (Ricardo) | 学术主页网站 🎓
 
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-blue)
+[🌐 Switch to English Version (切换到英文)](./README.md)
 
-一个基于HTML、CSS和JavaScript构建的赛博朋克风格个人主页，具有Three.js 3D效果和现代交互设计。
+## 📁 项目概述
 
-## 🚀 GitHub Pages
+这是刘硕（Ricardo）的个人学术网站项目，使用HTML、CSS和JavaScript构建。网站托管在GitHub Pages上，具有专业的学术布局，支持多语言和主题切换功能。
 
-该网站已部署在GitHub Pages上，可通过以下链接访问：
+### 🚀 功能特性
 
-[https://ricardo-shuo-liu.github.io](https://ricardo-shuo-liu.github.io)
+- **🌍 多语言支持**：英文和中文
+- **🌙 深色/浅色模式**：可切换深色和浅色主题
+- **📱 响应式设计**：适配不同屏幕尺寸
+- **🎨 学术风格布局**：专业的学术展示
+- **🔗 导航系统**：方便访问不同部分
 
-## 📋 目录
+## 🏗️ 如何构建
 
-- [特性](#特性)
-- [技术栈](#技术栈)
-- [导航](#导航)
-- [项目结构](#项目结构)
-- [设置](#设置)
-- [部署](#部署)
-- [许可证](#许可证)
+### 技术栈
 
-## ✨ 特性
+- **前端**：HTML5、CSS3、JavaScript
+- **样式**：自定义CSS，使用CSS变量实现主题支持
+- **图标**：通过CDN引入Font Awesome
+- **托管**：GitHub Pages
 
-- **赛博朋克设计**：深色主题搭配霓虹色调、故障效果和扫描线
-- **3D背景**：交互式Three.js场景，包含粒子、旋转立方体和网格
-- **多页面结构**：不同部分独立页面
-- **响应式设计**：适配所有屏幕尺寸
-- **交互元素**：平滑滚动、项目筛选、主题切换
-- **博客系统**：完整的博客系统，包含列表页和详情页
-- **学术论文**：用于展示研究论文和出版物的部分
-
-## 🛠️ 技术栈
-
-- **HTML5**：语义化标记
-- **CSS3**：赛博朋克样式、动画和响应式设计
-- **JavaScript (ES6+)**：交互功能
-- **Three.js**：3D背景效果
-- **Font Awesome**：图标
-- **Google Fonts**：Orbitron和Rajdhani字体
-
-## 🧭 导航
-
-网站包含以下页面：
-
-- **Home**：带有3D背景的主页面和介绍
-- **About**：个人背景、技能和教育
-- **Research**：研究方向和兴趣
-- **Projects**：项目组合，具有筛选功能
-- **Experience**：学术和专业经历时间线
-- **Contact**：联系信息和表单
-- **Publications**：学术论文和研究贡献
-- **Blog**：技术文章和见解
-
-## 📁 项目结构
+### 项目结构
 
 ```
-├── css/
-│   └── style.css          # 主样式表
-├── js/
-│   └── main.js            # 主JavaScript文件
-├── blog/
-│   ├── index.html         # 博客列表页
-│   └── *.html             # 单个博客文章
-├── index.html             # 主页
-├── about.html             # 关于页面
-├── research.html          # 研究页面
-├── projects.html          # 项目页面
-├── experience.html        # 经历页面
-├── contact.html           # 联系页面
-├── publications.html      # 出版物页面
-├── README.md              # 英文说明文档
-└── README_zh.md           # 中文说明文档
+├── index.html              # 主HTML文件
+├── assets/                 # 静态资源
+│   ├── css/                # CSS文件
+│   │   └── main.css        # 主样式表
+│   ├── js/                 # JavaScript文件
+│   │   ├── lang.js         # 语言配置
+│   │   └── common.js       # 通用功能
+│   └── images/             # 图片文件
+│       └── avatar.png      # 个人头像
+├── README.md               # 英文README
+├── README_zh.md            # 中文README
+├── deeptracer.md           # Deeptracer项目README
+└── M2x.md                  # M2x项目README
 ```
 
-## 📦 设置
+## 📖 使用方法
 
-要在本地运行此网站：
-
-1. 克隆仓库：
+1. **克隆仓库**：
    ```bash
    git clone https://github.com/Ricardo-shuo-liu/Ricardo-shuo-liu.github.io.git
-   ```
-
-2. 导航到项目目录：
-   ```bash
    cd Ricardo-shuo-liu.github.io
    ```
 
-3. 启动本地Web服务器：
+2. **本地运行**：
    ```bash
    # 使用Python 3
    python -m http.server 8000
    
-   # 使用Node.js（需要安装http-server包）
-   npx http-server -p 8000
+   # 使用Node.js
+   npx http-server . -p 8000
    ```
 
-4. 在浏览器中打开：
-   ```
-   http://localhost:8000
-   ```
+3. **在浏览器中访问** `http://localhost:8000`
 
-## 🚀 部署
+4. **自定义**：
+   - 更新 `assets/js/lang.js` 修改内容
+   - 更新 `assets/css/main.css` 修改样式
+   - 替换 `assets/images/avatar.png` 为你自己的头像
 
-当更改推送到`main`分支时，该网站会自动部署到GitHub Pages。
+## 🌐 部署
 
-手动部署步骤：
+网站部署在GitHub Pages上，地址为：
+[https://github.com/Ricardo-shuo-liu/Ricardo-shuo-liu.github.io](https://github.com/Ricardo-shuo-liu/Ricardo-shuo-liu.github.io)
 
-1. 确保所有更改已提交并推送到GitHub
-2. 进入GitHub上的仓库设置
-3. 导航到"Pages"部分
-4. 将源设置为"main"分支
-5. 点击"保存"
+### 部署步骤
 
-## 📝 许可证
+1. 将更改推送到 `main` 分支
+2. GitHub Pages会自动构建和部署网站
+3. 访问网站：`https://ricardo-shuo-liu.github.io`
 
-本项目采用MIT许可证 - 查看[LICENSE](LICENSE)文件了解详情。
+## 📄 许可证
 
-## 🌐 语言
+本项目采用MIT许可证 - 详情请查看 [LICENSE](LICENSE) 文件。
 
-- [English README](README.md)
-- [中文 README](README_zh.md)（当前文件）
+## 📞 联系方式
 
----
-
-由 Ricardo-shuo-liu 用心构建 ❤️
+- 项目仓库：[GitHub](https://github.com/Ricardo-shuo-liu/Ricardo-shuo-liu.github.io)
+- 网站：[https://ricardo-shuo-liu.github.io](https://ricardo-shuo-liu.github.io)

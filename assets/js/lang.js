@@ -20,7 +20,9 @@ const langConfig = {
           scholar: "Google Scholar: <a href='#'>Google Scholar Profile</a>",
           pubmed: "PubMed: <a href='#'>PubMed Profile</a>",
           github: "GitHub: <a href='https://github.com/Ricardo-shuo-liu?tab=repositories' target='_blank'>Ricardo-shuo-liu</a>",
-          bluesky: "Bluesky: <a href='https://bsky.app/profile/ricardoshuoliu.bsky.social' target='_blank'>ricardoshuoliu.bsky.social</a>"
+          bluesky: "Bluesky: <a href='https://bsky.app/profile/ricardoshuoliu.bsky.social' target='_blank'>ricardoshuoliu.bsky.social</a>",
+          huggingface: "Hugging Face: <a href='https://huggingface.co/flyRicardo' target='_blank'>flyRicardo</a>",
+          pypi: "PyPI: <a href='https://pypi.org/user/flyRicardo/' target='_blank'>flyRicardo</a>",
         }
       }
     },
@@ -43,7 +45,9 @@ const langConfig = {
           scholar: "谷歌学术: <a href='#'>谷歌学术主页</a>",
           pubmed: "PubMed: <a href='#'>PubMed 主页</a>",
           github: "GitHub: <a href='https://github.com/Ricardo-shuo-liu?tab=repositories' target='_blank'>Ricardo-shuo-liu</a>",
-          bluesky: "Bluesky: <a href='https://bsky.app/profile/ricardoshuoliu.bsky.social' target='_blank'>ricardoshuoliu.bsky.social</a>"
+          bluesky: "Bluesky: <a href='https://bsky.app/profile/ricardoshuoliu.bsky.social' target='_blank'>ricardoshuoliu.bsky.social</a>",
+          huggingface: "Hugging Face: <a href='https://huggingface.co/flyRicardo' target='_blank'>flyRicardo</a>",
+          pypi: "PyPI: <a href='https://pypi.org/user/flyRicardo/' target='_blank'>flyRicardo</a>",
         }
       }
     }
@@ -51,98 +55,122 @@ const langConfig = {
   // 主页文本（适配学术排版）
   index: {
     en: {
-      title: "Academic Pages Style Personal Website",
+      title: "",
       about: {
         title: "About Me",
         content: `GitHub Username: <a href='https://github.com/Ricardo-shuo-liu' target='_blank'>Ricardo-shuo-liu</a><br>
-        Repository Status: Based on public GitHub page, you own personal repositories (see below) and have no public contributed repositories yet.<br>
-        Research Interests: <span class='placeholder'>Software engineering, open-source development, machine learning applications (to fill)</span><br>
-        Education Background: <span class='placeholder'>PhD candidate in Computer Science, Red Brick University (to fill)</span>`
+        Repository Status: Based on public GitHub page, you own personal repositories (see below)<br>
+        Research Interests: NLP, AI Infrastructure<br>
+        Education Background: Undergraduate Student, Henan University of Economics and Law (HUEL), Zhengzhou`
       },
       personalProjects: {
         title: "Personal Projects (Owned Repositories)",
-        note: "📌 Below are GitHub repositories you created and own (1:1 sync with public information):",
+        note: "📌 Below are GitHub repositories I created and own:",
         repo1: { 
           name: "Deeptracer", 
-          desc: "Personal project repository", 
+          desc: "A personal project focused on AI infrastructure and reinforcement learning. Please visit the GitHub repository for more details.", 
           link: "https://github.com/Ricardo-shuo-liu/Deeptracer", 
           role: "Project Owner" 
         },
         repo2: { 
           name: "M2x", 
-          desc: "Personal project repository", 
+          desc: "A personal project related to NLP and AI infrastructure. Please visit the GitHub repository for more details.", 
           link: "https://github.com/Ricardo-shuo-liu/M2x", 
           role: "Project Owner" 
         }
       },
       contributedProjects: {
         title: "Contributed Projects (Participated Repositories)",
-        note: "📌 Below are GitHub repositories you participated in:",
+        note: "📌 Below are GitHub repositories I participated in:",
         repo1: { 
           name: "Paddle", 
-          desc: "Contributed project repository", 
+          desc: "Contributed to the PaddlePaddle framework, focusing on AI infrastructure.", 
           link: "https://github.com/Ricardo-shuo-liu/Paddle", 
           role: "Contributor" 
         },
         repo2: { 
           name: "docs", 
-          desc: "Contributed project repository", 
+          desc: "Contributed to documentation for AI projects.", 
           link: "https://github.com/Ricardo-shuo-liu/docs", 
           role: "Contributor" 
         },
         repo3: { 
           name: "objprint", 
-          desc: "Contributed project repository", 
+          desc: "Contributed to the objprint library for better object printing in Python.", 
           link: "https://github.com/Ricardo-shuo-liu/objprint", 
           role: "Contributor" 
+        }
+      },
+      blogPosts: {
+        title: "My Blog Posts",
+        intro: "Here are some of my technical blog posts:",
+        post1: {
+          title: "Python与语法糖",
+          desc: "A detailed explanation of Python syntax sugar and decorators"
+        },
+        post2: {
+          title: "Python变量",
+          desc: "An in-depth look at Python's variable reference mechanism and memory management"
         }
       }
     },
     zh: {
-      title: "Academic Pages 风格学术个人网站",
+      title: "",
       about: {
         title: "关于我",
         content: `GitHub 用户名: <a href='https://github.com/Ricardo-shuo-liu' target='_blank'>Ricardo-shuo-liu</a><br>
-        仓库状态: 基于公开 GitHub 页面，你拥有个人仓库（见下方），暂无公开的贡献仓库。<br>
-        研究方向: <span class='placeholder'>软件工程、开源开发、机器学习应用（待补充）</span><br>
-        教育背景: <span class='placeholder'>红砖大学计算机科学博士研究生（待补充）</span>`
+        仓库状态: 基于公开 GitHub 页面，我拥有个人仓库（见下方）<br>
+        研究方向: NLP、AI基础设施<br>
+        教育背景: 河南财经政法大学本科生，郑州`
       },
       personalProjects: {
         title: "个人项目（自有仓库）",
-        note: "📌 以下是你创建并拥有的 GitHub 仓库（1:1 同步公开信息）：",
+        note: "📌 以下是我创建并拥有的 GitHub 仓库：",
         repo1: { 
           name: "Deeptracer", 
-          desc: "个人项目仓库", 
+          desc: "一个专注于AI基础设施和强化学习的个人项目。请访问GitHub仓库了解更多详情。", 
           link: "https://github.com/Ricardo-shuo-liu/Deeptracer", 
           role: "项目所有者" 
         },
         repo2: { 
           name: "M2x", 
-          desc: "个人项目仓库", 
+          desc: "一个与NLP和AI基础设施相关的个人项目。请访问GitHub仓库了解更多详情。", 
           link: "https://github.com/Ricardo-shuo-liu/M2x", 
           role: "项目所有者" 
         }
       },
       contributedProjects: {
         title: "贡献项目（参与仓库）",
-        note: "📌 以下是你参与的 GitHub 仓库：",
+        note: "📌 以下是我参与的 GitHub 仓库：",
         repo1: { 
           name: "Paddle", 
-          desc: "贡献项目仓库", 
+          desc: "为PaddlePaddle框架做出贡献，专注于AI基础设施。", 
           link: "https://github.com/Ricardo-shuo-liu/Paddle", 
           role: "贡献者" 
         },
         repo2: { 
           name: "docs", 
-          desc: "贡献项目仓库", 
+          desc: "为AI项目的文档做出贡献。", 
           link: "https://github.com/Ricardo-shuo-liu/docs", 
           role: "贡献者" 
         },
         repo3: { 
           name: "objprint", 
-          desc: "贡献项目仓库", 
+          desc: "为Python中更好的对象打印库objprint做出贡献。", 
           link: "https://github.com/Ricardo-shuo-liu/objprint", 
           role: "贡献者" 
+        }
+      },
+      blogPosts: {
+        title: "我的博客文章",
+        intro: "以下是我的一些技术博客文章：",
+        post1: {
+          title: "Python与语法糖",
+          desc: "详细解释Python语法糖和装饰器"
+        },
+        post2: {
+          title: "Python变量",
+          desc: "深入探讨Python的变量引用机制和内存管理"
         }
       }
     }
@@ -150,19 +178,41 @@ const langConfig = {
   // 功能页面文本（适配学术风）
   cv: { 
     en: { title: "Curriculum Vitae", content: `<h3>Education</h3>
-      <p><span class='placeholder'>PhD in Computer Science, Red Brick University, 2020-Present (to fill)</span></p>
-      <p><span class='placeholder'>Master in Software Engineering, XX University, 2017-2020 (to fill)</span></p>
-      <h3>Professional Experience</h3>
-      <p><span class='placeholder'>Research Assistant, XX Lab, 2021-Present (to fill)</span></p>
-      <h3>Skills</h3>
-      <p><span class='placeholder'>Programming: Python, Java, C++, JavaScript; Research: Machine Learning, Open-Source Development (to fill)</span></p>` }, 
+      <p>Undergraduate Student, Henan University of Economics and Law (HUEL), Zhengzhou</p>
+      <h3>Research Interests</h3>
+      <p>Reinforcement Learning, AI Infrastructure</p>
+      <h3>Technical Skills</h3>
+      <p>Programming Languages: Python, C++</p>
+      <p>Frameworks: PyTorch, PaddlePaddle</p>
+      <p>Areas of Expertise: Deep Learning, Natural Language Processing</p>
+      <p>Experience: Fine-tuning of BERT and other large language models</p>
+      <h3>Community Involvement</h3>
+      <p>Member of Baidu PFCC Community</p>
+      <p>Member of GTOC AI Infra</p>
+      <p>Member of ERNIE Organization on Hugging Face</p>
+      <h3>Projects</h3>
+      <h4>Deeptracer</h4>
+      <p>An AI-driven intelligent code analysis and refactoring platform that provides professional code optimization solutions through deep code understanding, multi-dimensional visual analysis, and natural language interaction. Features include code analysis, performance analysis, memory analysis, and AI refactoring suggestions.</p>
+      <h4>M2x</h4>
+      <p>A lightweight online Markdown editor that implements basic Markdown editing functionality directly in the browser. It also provides convenient APIs to quickly convert Markdown files to PDF and Word formats.</p>` }, 
     zh: { title: "个人简历", content: `<h3>教育背景</h3>
-      <p><span class='placeholder'>红砖大学计算机科学博士，2020-至今（待补充）</span></p>
-      <p><span class='placeholder'>XX大学软件工程硕士，2017-2020（待补充）</span></p>
-      <h3>工作经历</h3>
-      <p><span class='placeholder'>XX实验室研究助理，2021-至今（待补充）</span></p>
-      <h3>专业技能</h3>
-      <p><span class='placeholder'>编程：Python、Java、C++、JavaScript；研究：机器学习、开源开发（待补充）</span></p>` } 
+      <p>河南财经政法大学本科生，郑州</p>
+      <h3>研究方向</h3>
+      <p>强化学习、AI基础设施</p>
+      <h3>技术技能</h3>
+      <p>编程语言：Python、C++</p>
+      <p>框架：PyTorch、PaddlePaddle</p>
+      <p>专长领域：深度学习、自然语言处理</p>
+      <p>经验：BERT及其他大模型微调经验</p>
+      <h3>社区参与</h3>
+      <p>百度PFCC社区成员</p>
+      <p>GTOC AI Infra成员</p>
+      <p>Hugging Face上ERNIE组织成员</p>
+      <h3>项目</h3>
+      <h4>Deeptracer</h4>
+      <p>一个AI驱动的智能代码分析和重构平台，通过深度代码理解、多维度可视化分析和自然语言交互提供专业的代码优化解决方案。功能包括代码分析、性能分析、内存分析和AI重构建议。</p>
+      <h4>M2x</h4>
+      <p>一个轻量级的在线Markdown编辑器，直接在浏览器中实现基本的Markdown编辑功能。它还提供便捷的API，可以快速将Markdown文件转换为PDF和Word格式。</p>` } 
   },
   talks: { 
     en: { title: "Talks & Presentations", content: `<p>Currently no talks or presentations available.</p>` }, 

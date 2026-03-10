@@ -1,128 +1,86 @@
-# Ricardo-shuo-liu.github.io
+# Shuo Liu (Ricardo) | Academic Profile Website 🎓
 
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-blue)
+[🌐 Switch to Chinese Version (切换到中文)](./README_zh.md)
 
-A cyberpunk-themed personal homepage built with HTML, CSS, and JavaScript, featuring Three.js 3D effects and a modern, interactive design.
+## 📁 Project Overview
 
-## 🚀 GitHub Pages
+This is a personal academic website project for Shuo Liu (Ricardo), built with HTML, CSS, and JavaScript. The website is hosted on GitHub Pages and features a professional academic layout with multi-language support and theme toggle functionality.
 
-This website is deployed on GitHub Pages and can be accessed at:
+### 🚀 Features
 
-[https://ricardo-shuo-liu.github.io](https://ricardo-shuo-liu.github.io)
+- **🌍 Multi-language Support**: English and Chinese
+- **🌙 Dark/Light Mode**: Toggle between dark and light themes
+- **📱 Responsive Design**: Adapts to different screen sizes
+- **🎨 Academic-style Layout**: Professional academic presentation
+- **🔗 Navigation**: Easy access to different sections
 
-## 📋 Table of Contents
+## 🏗️ How It's Built
 
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Navigation](#navigation)
-- [Project Structure](#project-structure)
-- [Setup](#setup)
-- [Deployment](#deployment)
-- [License](#license)
+### Technology Stack
 
-## ✨ Features
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Styling**: Custom CSS with CSS variables for theme support
+- **Icons**: Font Awesome via CDN
+- **Hosting**: GitHub Pages
 
-- **Cyberpunk Design**: Dark theme with neon accents, glitch effects, and scanlines
-- **3D Background**: Interactive Three.js scene with particles, rotating cubes, and grids
-- **Multi-page Structure**: Separate pages for different sections
-- **Responsive Design**: Optimized for all screen sizes
-- **Interactive Elements**: Smooth scrolling, project filtering, theme toggle
-- **Blog System**: Complete blog with list and detail pages
-- **Academic Publications**: Section for research papers and publications
-
-## 🛠️ Tech Stack
-
-- **HTML5**: Semantic markup
-- **CSS3**: Cyberpunk styling, animations, and responsive design
-- **JavaScript (ES6+)**: Interactive functionality
-- **Three.js**: 3D background effects
-- **Font Awesome**: Icons
-- **Google Fonts**: Orbitron and Rajdhani fonts
-
-## 🧭 Navigation
-
-The website includes the following pages:
-
-- **Home**: Hero section with 3D background and introduction
-- **About**: Personal background, skills, and education
-- **Research**: Research directions and interests
-- **Projects**: Portfolio of projects with filtering functionality
-- **Experience**: Timeline of academic and professional experiences
-- **Contact**: Contact information and form
-- **Publications**: Academic papers and research contributions
-- **Blog**: Technical articles and insights
-
-## 📁 Project Structure
+### Project Structure
 
 ```
-├── css/
-│   └── style.css          # Main stylesheet
-├── js/
-│   └── main.js            # Main JavaScript file
-├── blog/
-│   ├── index.html         # Blog list page
-│   └── *.html             # Individual blog posts
-├── index.html             # Homepage
-├── about.html             # About page
-├── research.html          # Research page
-├── projects.html          # Projects page
-├── experience.html        # Experience page
-├── contact.html           # Contact page
-├── publications.html      # Publications page
-├── README.md              # This file
-└── README_zh.md           # Chinese README
+├── index.html              # Main HTML file
+├── assets/                 # Static assets
+│   ├── css/                # CSS files
+│   │   └── main.css        # Main stylesheet
+│   ├── js/                 # JavaScript files
+│   │   ├── lang.js         # Language configuration
+│   │   └── common.js       # Common functionality
+│   └── images/             # Image files
+│       └── avatar.png      # Profile avatar
+├── README.md               # English README
+├── README_zh.md            # Chinese README
+├── deeptracer.md           # Deeptracer project README
+└── M2x.md                  # M2x project README
 ```
 
-## 📦 Setup
+## 📖 How to Use
 
-To run this website locally:
-
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/Ricardo-shuo-liu/Ricardo-shuo-liu.github.io.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
    cd Ricardo-shuo-liu.github.io
    ```
 
-3. Start a local web server:
+2. **Run locally**:
    ```bash
    # Using Python 3
    python -m http.server 8000
    
-   # Using Node.js (with http-server package)
-   npx http-server -p 8000
+   # Using Node.js
+   npx http-server . -p 8000
    ```
 
-4. Open your browser and navigate to:
-   ```
-   http://localhost:8000
-   ```
+3. **Navigate to** `http://localhost:8000` in your browser
 
-## 🚀 Deployment
+4. **Customize**:
+   - Update `assets/js/lang.js` to modify content
+   - Update `assets/css/main.css` to change styling
+   - Replace `assets/images/avatar.png` with your own avatar
 
-This website is automatically deployed to GitHub Pages when changes are pushed to the `main` branch.
+## 🌐 Deployment
 
-To deploy manually:
+The website is deployed on GitHub Pages at:
+[https://github.com/Ricardo-shuo-liu/Ricardo-shuo-liu.github.io](https://github.com/Ricardo-shuo-liu/Ricardo-shuo-liu.github.io)
 
-1. Ensure all changes are committed and pushed to GitHub
-2. Go to your repository settings on GitHub
-3. Navigate to the "Pages" section
-4. Set the source to "main" branch
-5. Click "Save"
+### Deployment Steps
 
-## 📝 License
+1. Push changes to the `main` branch
+2. GitHub Pages will automatically build and deploy the site
+3. Access the website at `https://ricardo-shuo-liu.github.io`
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🌐 Language
+## 📞 Contact
 
-- [English README](README.md) (this file)
-- [中文 README](README_zh.md)
-
----
-
-Built with ❤️ by Ricardo-shuo-liu
+- Project Repository: [GitHub](https://github.com/Ricardo-shuo-liu/Ricardo-shuo-liu.github.io)
+- Website: [https://ricardo-shuo-liu.github.io](https://ricardo-shuo-liu.github.io)
