@@ -202,6 +202,95 @@ body {
   color: var(--text-secondary);
   text-align: justify; /* 两端对齐，学术排版特征 */
 }
+
+/* HOME页面布局优化 */
+#about-content,
+#projects-content,
+#contact-content {
+  margin-bottom: 2rem;
+}
+
+#about-content p,
+#projects-content p,
+#contact-content p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+#about-content a,
+#projects-content a,
+#contact-content a {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link-color);
+  transition: all 0.3s ease;
+}
+
+#about-content a:hover,
+#projects-content a:hover,
+#contact-content a:hover {
+  border-bottom: 1px solid var(--link-color);
+  color: var(--text-primary);
+}
+
+/* 项目预览样式 */
+.projects-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-item {
+  background-color: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  border-color: var(--link-color);
+}
+
+.project-item h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.project-item p {
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.project-item a {
+  display: inline-block;
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-item a:hover {
+  color: var(--text-primary);
+  transform: translateX(5px);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  #about-content,
+  .info-card {
+    padding: 1.5rem;
+  }
+  
+  .projects-preview {
+    grid-template-columns: 1fr;
+  }
+}
 .content a {
   color: var(--link-color);
   text-decoration: none;
@@ -273,6 +362,47 @@ body {
   color: #888888;
   font-style: italic;
   border-bottom: 1px dashed #888;
+}
+
+/* CV下载按钮样式 */
+.cv-download-btn {
+  background-color: var(--toggle-btn);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+.cv-download-btn:hover {
+  background-color: var(--link-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+.cv-download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* CV页面布局调整 */
+#cv-download-btn {
+  margin-left: auto;
+}
+
+/* 确保按钮在移动设备上也显示正常 */
+@media (max-width: 768px) {
+  .cv-download-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 /* 页脚（适配主题） */

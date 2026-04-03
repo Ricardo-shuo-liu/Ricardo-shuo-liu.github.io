@@ -90,56 +90,15 @@ function loadPageContent(pageId) {
     case 'index':
       contentContainer.innerHTML = `
         ${lang.title ? `<h1 id="page-title">${lang.title}</h1>` : ''}
-        
+
         <h2 id="about-title">${lang.about.title}</h2>
         <div id="about-content">${lang.about.content}</div>
 
-        <h2 id="personal-projects-title">${lang.personalProjects.title}</h2>
-        <p id="personal-projects-note">${lang.personalProjects.note}</p>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3 id="repo1-name">${lang.personalProjects.repo1.name}</h3>
-            <p id="repo1-desc">${lang.personalProjects.repo1.desc}</p>
-            <p><a href="${lang.personalProjects.repo1.link}" target="_blank" id="repo1-link">🔗 GitHub Repository Link</a></p>
-            <p class="project-role" id="repo1-role">Role: ${lang.personalProjects.repo1.role}</p>
-          </div>
-          <div class="project-card">
-            <h3 id="repo2-name">${lang.personalProjects.repo2.name}</h3>
-            <p id="repo2-desc">${lang.personalProjects.repo2.desc}</p>
-            <p><a href="${lang.personalProjects.repo2.link}" target="_blank" id="repo2-link">🔗 GitHub Repository Link</a></p>
-            <p class="project-role" id="repo2-role">Role: ${lang.personalProjects.repo2.role}</p>
-          </div>
-        </div>
+        <h2 id="projects-title">${lang.projects.title}</h2>
+        <div id="projects-content">${lang.projects.content}</div>
 
-        <h2 id="contributed-projects-title">${lang.contributedProjects.title}</h2>
-        <p id="contributed-projects-note">${lang.contributedProjects.note}</p>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3 id="contrib-repo1-name">${lang.contributedProjects.repo1.name}</h3>
-            <p id="contrib-repo1-desc">${lang.contributedProjects.repo1.desc}</p>
-            <p><a href="${lang.contributedProjects.repo1.link}" id="contrib-repo1-link" target="_blank">🔗 GitHub Repository Link</a></p>
-            <p class="project-role" id="contrib-repo1-role">Role: ${lang.contributedProjects.repo1.role}</p>
-          </div>
-          <div class="project-card">
-            <h3 id="contrib-repo2-name">${lang.contributedProjects.repo2.name}</h3>
-            <p id="contrib-repo2-desc">${lang.contributedProjects.repo2.desc}</p>
-            <p><a href="${lang.contributedProjects.repo2.link}" id="contrib-repo2-link" target="_blank">🔗 GitHub Repository Link</a></p>
-            <p class="project-role" id="contrib-repo2-role">Role: ${lang.contributedProjects.repo2.role}</p>
-          </div>
-          <div class="project-card">
-            <h3 id="contrib-repo3-name">${lang.contributedProjects.repo3.name}</h3>
-            <p id="contrib-repo3-desc">${lang.contributedProjects.repo3.desc}</p>
-            <p><a href="${lang.contributedProjects.repo3.link}" id="contrib-repo3-link" target="_blank">🔗 GitHub Repository Link</a></p>
-            <p class="project-role" id="contrib-repo3-role">Role: ${lang.contributedProjects.repo3.role}</p>
-          </div>
-        </div>
-
-        <h2>${lang.blogPosts.title}</h2>
-        <p>${lang.blogPosts.intro}</p>
-        <ul>
-          <li><a href="https://blog.csdn.net/2401_88165744/article/details/151224614?spm=1001.2014.3001.5501" target="_blank">${lang.blogPosts.post1.title}</a> - ${lang.blogPosts.post1.desc}</li>
-          <li><a href="https://blog.csdn.net/2401_88165744/article/details/150499136?spm=1001.2014.3001.5501" target="_blank">${lang.blogPosts.post2.title}</a> - ${lang.blogPosts.post2.desc}</li>
-        </ul>
+        <h2 id="contact-title">${lang.contact.title}</h2>
+        <div id="contact-content">${lang.contact.content}</div>
       `;
       break;
     case 'cv':
