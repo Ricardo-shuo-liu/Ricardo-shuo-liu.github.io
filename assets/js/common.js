@@ -1,230 +1,219 @@
-// 全局状态：默认英文+深色主题
-let currentLang = "en";
-let currentTheme = "dark";
-let currentPage = "index";
+// Global state
+let currentLang = localStorage.getItem('lang') || 'zh';
+let currentTheme = localStorage.getItem('theme') || 'light';
 
-// 页面加载后初始化
-document.addEventListener('DOMContentLoaded', function() {
-  // 1. 初始化主题（优先读取本地存储，适配用户偏好）
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  // 2. 初始化语言（优先读取本地存储，适配用户偏好）
   initLang();
-  // 3. 初始化通用UI（导航/侧边栏/页脚）
-  initCommonUI();
-  // 4. 初始化当前页面内容
-  loadPageContent(currentPage);
+  renderContent();
+  initScrollSpy();
+  initEventListeners();
+});
 
-  // 5. 事件绑定：语言切换
-  document.getElementById('lang-toggle').addEventListener('click', function() {
-    currentLang = currentLang === "en" ? "zh" : "en";
-    saveLang();
-    initCommonUI();
-    loadPageContent(currentPage);
+// Theme management
+function initTheme() {
+  document.body.setAttribute('data-theme', currentTheme);
+  updateThemeIcon();
+}
+
+function toggleTheme() {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  localStorage.setItem('theme', currentTheme);
+  document.body.setAttribute('data-theme', currentTheme);
+  updateThemeIcon();
+}
+
+function updateThemeIcon() {
+  const icon = document.querySelector('#theme-toggle i');
+  if (currentTheme === 'dark') {
+    icon.className = 'fa-solid fa-sun';
+  } else {
+    icon.className = 'fa-solid fa-moon';
+  }
+}
+
+// Language management
+function initLang() {
+  updateLangUI();
+}
+
+function toggleLang() {
+  currentLang = currentLang === 'zh' ? 'en' : 'zh';
+  localStorage.setItem('lang', currentLang);
+  updateLangUI();
+  renderContent();
+}
+
+function updateLangUI() {
+  const btn = document.getElementById('lang-toggle');
+  btn.textContent = currentLang === 'zh' ? 'English' : '中文';
+  
+  // Update nav links
+  const nav = langConfig.common[currentLang].nav;
+  document.getElementById('nav-about').textContent = nav.about;
+  document.getElementById('nav-education').textContent = nav.education;
+  document.getElementById('nav-research').textContent = nav.research;
+  document.getElementById('nav-publications').textContent = nav.publications;
+  document.getElementById('nav-projects').textContent = nav.projects;
+  document.getElementById('nav-cv').textContent = nav.cv;
+  document.getElementById('nav-blog').textContent = nav.blog;
+  
+  // Update sidebar
+  const sidebar = langConfig.common[currentLang].sidebar;
+  document.getElementById('sidebar-name').textContent = sidebar.name;
+  document.getElementById('sidebar-university').textContent = sidebar.university;
+  
+  // Update tags
+  const tagsContainer = document.getElementById('sidebar-tags');
+  tagsContainer.innerHTML = sidebar.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+  
+  // Update contact list - icons are already in HTML template, just update text/links
+  document.getElementById('contact-location').textContent = sidebar.contact.location;
+  document.getElementById('contact-email').textContent = '13838152117@139.com';
+  document.getElementById('contact-github').textContent = 'GitHub';
+  document.getElementById('contact-scholar').textContent = currentLang === 'zh' ? '谷歌学术' : 'Google Scholar';
+  document.getElementById('contact-bluesky').textContent = 'Bluesky';
+  document.getElementById('contact-huggingface').textContent = 'Hugging Face';
+  document.getElementById('contact-pypi').textContent = 'PyPI';
+  
+  // Update footer
+  document.getElementById('site-footer').innerHTML = `<p>${langConfig.common[currentLang].footer}</p>`;
+}
+
+// Render all content sections
+function renderContent() {
+  renderAbout();
+  renderEducation();
+  renderResearch();
+  renderPublications();
+  renderProjects();
+  renderBlog();
+}
+
+function renderAbout() {
+  const data = langConfig.about[currentLang];
+  document.getElementById('about-title').textContent = data.title;
+  document.getElementById('about-content').innerHTML = data.content;
+}
+
+function renderEducation() {
+  const data = langConfig.education[currentLang];
+  document.getElementById('education-title').textContent = data.title;
+  
+  const timeline = document.getElementById('education-content');
+  timeline.innerHTML = data.items.map(item => `
+    <div class="timeline-item">
+      <div class="timeline-period">${item.period}</div>
+      <div class="timeline-school">${item.school}, ${item.location}</div>
+      <div class="timeline-detail">${item.degree} - ${item.detail}</div>
+    </div>
+  `).join('');
+}
+
+function renderResearch() {
+  const data = langConfig.research[currentLang];
+  document.getElementById('research-title').textContent = data.title;
+  document.getElementById('research-content').innerHTML = data.content;
+}
+
+function renderPublications() {
+  const data = langConfig.publications[currentLang];
+  document.getElementById('publications-title').textContent = data.title;
+  document.getElementById('publications-content').innerHTML = `
+    <div class="publications-placeholder">
+      <p>${data.placeholder}</p>
+    </div>
+  `;
+}
+
+function renderProjects() {
+  const data = langConfig.projects[currentLang];
+  document.getElementById('projects-title').textContent = data.title;
+  
+  const container = document.getElementById('projects-content');
+  container.innerHTML = data.categories.map(category => `
+    <div class="projects-category">
+      <h3>${category.name}</h3>
+      <div class="projects-grid">
+        ${category.items.map(project => `
+          <div class="project-card">
+            <h4>${project.name}</h4>
+            <p>${project.desc}</p>
+            <a href="${project.url}" target="_blank" class="project-link">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <span class="project-role">${project.role}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderBlog() {
+  const data = langConfig.blog[currentLang];
+  document.getElementById('blog-title').textContent = data.title;
+  
+  const container = document.getElementById('blog-content');
+  container.innerHTML = `
+    <div class="blog-list">
+      ${data.posts.map(post => `
+        <div class="blog-item">
+          <h3>${post.title}</h3>
+          <div class="blog-meta">${post.date}</div>
+          <p>${post.desc}</p>
+          <a href="${post.url}" class="blog-link">
+            ${currentLang === 'zh' ? '阅读更多 →' : 'Read more →'}
+          </a>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+// Scroll spy for navigation highlighting
+function initScrollSpy() {
+  const sections = document.querySelectorAll('.content-section');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('data-section') === id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, {
+    rootMargin: '-100px 0px -60% 0px',
+    threshold: 0
   });
+  
+  sections.forEach(section => observer.observe(section));
+}
 
-  // 6. 事件绑定：主题切换（月亮/太阳图标）
-  document.getElementById('theme-toggle').addEventListener('click', function() {
-    currentTheme = currentTheme === "dark" ? "light" : "dark";
-    updateTheme();
-  });
-
-  // 7. 事件绑定：导航链接点击
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', function(e) {
+// Event listeners
+function initEventListeners() {
+  // Theme toggle
+  document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+  
+  // Language toggle
+  document.getElementById('lang-toggle').addEventListener('click', toggleLang);
+  
+  // Smooth scroll for nav links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
-      const pageId = this.getAttribute('data-page');
-      if (pageId) {
-        navigateToPage(pageId);
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
-
-  // 8. 占位内容提示（鼠标悬浮高亮）
-  document.querySelectorAll('.placeholder').forEach(item => {
-    // 修正后的代码
-    item.addEventListener('mouseover', () => {
-    // 正确获取CSS变量 --hover-color 的实际值
-    const hoverColor = getComputedStyle(document.documentElement).getPropertyValue('--hover-color');
-    item.style.backgroundColor = hoverColor; // 赋值具体颜色值
-    item.style.padding = '2px 4px';
-    item.style.borderRadius = '3px';
-    });
-    item.addEventListener('mouseout', () => {
-      item.style.backgroundColor = 'transparent';
-      item.style.padding = '0';
-    });
-  });
-
-  // 9. 处理浏览器前进/后退
-  window.addEventListener('popstate', function() {
-    const pageId = window.location.hash.substring(1) || 'index';
-    loadPageContent(pageId);
-  });
-});
-
-// 导航到指定页面
-function navigateToPage(pageId) {
-  currentPage = pageId;
-  window.history.pushState(null, null, `#${pageId}`);
-  loadPageContent(pageId);
-}
-
-// 加载页面内容
-function loadPageContent(pageId) {
-  currentPage = pageId;
-  document.body.dataset.page = pageId;
-  
-  // 清空内容容器
-  const contentContainer = document.getElementById('page-content-container');
-  contentContainer.innerHTML = '';
-  
-  if (!langConfig[pageId]) {
-    contentContainer.innerHTML = '<h1>Page Not Found</h1><p>The requested page does not exist.</p>';
-    return;
-  }
-  
-  const lang = langConfig[pageId][currentLang];
-  
-  // 按页面类型加载内容
-  switch(pageId) {
-    case 'index':
-      contentContainer.innerHTML = `
-        ${lang.title ? `<h1 id="page-title">${lang.title}</h1>` : ''}
-
-        <h2 id="about-title">${lang.about.title}</h2>
-        <div id="about-content">${lang.about.content}</div>
-
-        <h2 id="projects-title">${lang.projects.title}</h2>
-        <div id="projects-content">${lang.projects.content}</div>
-
-        <h2 id="contact-title">${lang.contact.title}</h2>
-        <div id="contact-content">${lang.contact.content}</div>
-      `;
-      break;
-    case 'cv':
-    case 'talks':
-    case 'teaching':
-    case 'portfolio':
-    case 'publications':
-    case 'guide':
-      contentContainer.innerHTML = `
-        <h1 id="page-title">${lang.title}</h1>
-        <div id="page-content">${lang.content}</div>
-      `;
-      break;
-    case 'blog':
-      contentContainer.innerHTML = `
-        <h1 id="page-title">${lang.title}</h1>
-        <p id="blog-intro">${lang.intro}</p>
-        <div class="blog-posts">
-          <div class="blog-post">
-            <h2 id="post1-title">${lang.post1.title}</h2>
-            <p id="post1-date">${lang.post1.date}</p>
-            <p id="post1-desc">${lang.post1.desc}</p>
-            <a href="blog/posts/python变量.html" target="_blank" class="read-more">Read More →</a>
-          </div>
-          <div class="blog-post">
-            <h2 id="post2-title">${lang.post2.title}</h2>
-            <p id="post2-date">${lang.post2.date}</p>
-            <p id="post2-desc">${lang.post2.desc}</p>
-            <a href="blog/posts/python与语法糖.html" target="_blank" class="read-more">Read More →</a>
-          </div>
-          <div class="blog-post">
-            <h2 id="post3-title">${lang.post3.title}</h2>
-            <p id="post3-date">${lang.post3.date}</p>
-            <p id="post3-desc">${lang.post3.desc}</p>
-            <a href="blog/posts/llm.html" target="_blank" class="read-more">Read More →</a>
-          </div>
-        </div>
-      `;
-      break;
-    case 'post1':
-    case 'post2':
-      contentContainer.innerHTML = `
-        <h1 id="page-title">${lang.title}</h1>
-        <div id="post-content">${lang.content}</div>
-        <button class="back-button" onclick="navigateToPage('blog')">Back to Blog</button>
-      `;
-      break;
-  }
-  
-  // 重新绑定占位内容提示事件
-  document.querySelectorAll('.placeholder').forEach(item => {
-    item.addEventListener('mouseover', () => {
-      const hoverColor = getComputedStyle(document.documentElement).getPropertyValue('--hover-color');
-      item.style.backgroundColor = hoverColor;
-      item.style.padding = '2px 4px';
-      item.style.borderRadius = '3px';
-    });
-    item.addEventListener('mouseout', () => {
-      item.style.backgroundColor = 'transparent';
-      item.style.padding = '0';
-    });
-  });
-}
-
-// 初始化语言（读取本地存储+更新UI）
-function initLang() {
-  // 优先读取本地存储的语言偏好
-  const savedLang = localStorage.getItem('site-lang');
-  if (savedLang) {
-    currentLang = savedLang;
-  }
-}
-
-// 保存语言设置到本地存储
-function saveLang() {
-  localStorage.setItem('site-lang', currentLang);
-}
-
-// 初始化主题（读取本地存储+更新UI）
-function initTheme() {
-  // 优先读取本地存储的主题偏好
-  const savedTheme = localStorage.getItem('site-theme');
-  if (savedTheme) {
-    currentTheme = savedTheme;
-  }
-  updateTheme();
-}
-
-// 更新主题（修改CSS变量+切换图标+保存到本地）
-function updateTheme() {
-  // 修改根元素的data-theme属性
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  // 切换图标（月亮/太阳）
-  const themeBtn = document.getElementById('theme-toggle');
-  themeBtn.innerHTML = currentTheme === "dark" ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-  // 保存到本地存储
-  localStorage.setItem('site-theme', currentTheme);
-}
-
-// 初始化通用UI（导航/侧边栏/页脚）
-function initCommonUI() {
-  const lang = langConfig.common[currentLang];
-  // 更新网站标题
-  document.title = lang.siteTitle;
-  // 更新顶部标题
-  document.getElementById('site-title').textContent = lang.siteTitle;
-  // 更新导航栏
-  Object.keys(lang.nav).forEach(key => {
-    const el = document.getElementById(`nav-${key}`);
-    if (el) el.textContent = lang.nav[key];
-  });
-  // 更新语言按钮
-  document.getElementById('lang-toggle').textContent = lang.toggleLang;
-  // 更新侧边栏
-  document.getElementById('sidebar-name').textContent = lang.sidebar.name;
-  document.getElementById('sidebar-bio').textContent = lang.sidebar.bio;
-  // 侧边栏快捷链接（复刻参考站的所有项）
-  document.getElementById('contact-location').innerHTML = lang.sidebar.contact.location;
-  document.getElementById('contact-university').innerHTML = lang.sidebar.contact.university;
-  document.getElementById('contact-email').innerHTML = lang.sidebar.contact.email;
-  document.getElementById('contact-scholar').innerHTML = lang.sidebar.contact.scholar;
-  document.getElementById('contact-pubmed').innerHTML = lang.sidebar.contact.pubmed;
-  document.getElementById('contact-github').innerHTML = lang.sidebar.contact.github;
-  document.getElementById('contact-bluesky').innerHTML = lang.sidebar.contact.bluesky;
-  document.getElementById('contact-huggingface').innerHTML = lang.sidebar.contact.huggingface;
-  document.getElementById('contact-pypi').innerHTML = lang.sidebar.contact.pypi;
-  // 更新页脚
-  document.getElementById('site-footer').textContent = lang.footer;
 }

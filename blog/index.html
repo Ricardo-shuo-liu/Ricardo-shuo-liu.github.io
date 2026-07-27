@@ -3,98 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Posts | Shuo Liu</title>
-  <!-- 引入Font Awesome图标（必须） -->
+  <title>Blog | Shuo Liu</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
-<body data-page="blog">
-  <!-- 顶部导航栏（含主题+语言切换） -->
+<body data-theme="light">
+
+  <!-- Header / Navigation -->
   <header class="site-header">
     <div class="nav-container">
-      <div class="site-title">
-        <a href="../index.html" id="site-title">Shuo Liu (Ricardo) | Academic Profile</a>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="../index.html" id="nav-home">Home</a></li>
-          <li><a href="../pages/publications.html" id="nav-publications">Publications</a></li>
-          <li><a href="../pages/talks.html" id="nav-talks">Talks</a></li>
-          <li><a href="../pages/teaching.html" id="nav-teaching">Teaching</a></li>
-          <li><a href="../pages/portfolio.html" id="nav-portfolio">Portfolio</a></li>
-          <li><a href="index.html" id="nav-blog">Blog Posts</a></li>
-          <li><a href="../pages/cv.html" id="nav-cv">CV</a></li>
-          <li><a href="../pages/guide.html" id="nav-guide">Guide</a></li>
-        </ul>
+      <a href="../index.html" class="site-title">Shuo Liu</a>
+      <nav class="main-nav">
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#education" class="nav-link">Education</a>
+        <a href="../index.html#research" class="nav-link">Research</a>
+        <a href="../index.html#publications" class="nav-link">Publications</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../刘硕 - 副本.pdf" class="nav-link" target="_blank">CV</a>
+        <a href="index.html" class="nav-link active">Blog</a>
       </nav>
-      <!-- 主题+语言切换按钮组 -->
-      <div class="toggle-group">
-        <button id="theme-toggle" class="theme-toggle">
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
           <i class="fa-solid fa-moon"></i>
         </button>
-        <button id="lang-toggle" class="lang-toggle">Switch to 中文</button>
+        <a href="../index.html#blog" class="lang-btn">← Back</a>
       </div>
     </div>
   </header>
 
-  <!-- 主内容容器 -->
-  <div class="main-container">
-    <!-- 左侧完整侧边栏 -->
-    <aside class="sidebar">
-      <img src="../assets/images/avatar.png" alt="Shuo Liu" class="avatar">
-      <h3 id="sidebar-name">Shuo Liu (Ricardo)</h3>
-      <p class="sidebar-bio" id="sidebar-bio">Building innovative things</p>
-      <ul class="contact-list">
-        <li><i class="fa-solid fa-earth-americas"></i> <span id="contact-location">Earth: <span class="placeholder">To be filled (e.g., Beijing, China)</span></span></li>
-        <li><i class="fa-solid fa-building-columns"></i> <span id="contact-university">University: <span class="placeholder">Red Brick University (to fill)</span></span></li>
-        <li><i class="fa-solid fa-envelope"></i> <span id="contact-email">Email: <a href="mailto:your-email@example.com" class="placeholder">your-email@example.com (to fill)</a></span></li>
-        <li><i class="fa-solid fa-graduation-cap"></i> <span id="contact-scholar">Google Scholar: <a href="#" class="placeholder">Google Scholar Profile (to fill)</a></span></li>
-        <li><i class="fa-solid fa-id-card"></i> <span id="contact-orcid">ORCID: <a href="#" class="placeholder">0000-0000-0000-0000 (to fill)</a></span></li>
-        <li><i class="fa-solid fa-book-medical"></i> <span id="contact-pubmed">PubMed: <a href="#" class="placeholder">PubMed Profile (to fill)</a></span></li>
-        <li><i class="fa-brands fa-github"></i> <span id="contact-github">GitHub: <a href="https://github.com/Ricardo-shuo-liu" target="_blank">Ricardo-shuo-liu</a></span></li>
-        <li><i class="fa-solid fa-cloud"></i> <span id="contact-bluesky">Bluesky: <a href="#" class="placeholder">@username.bsky.social (to fill)</a></span></li>
-      </ul>
-    </aside>
-
-    <!-- 右侧Blog列表区 -->
+  <!-- Main Content -->
+  <div class="main-container" style="grid-template-columns: 1fr; max-width: 900px;">
     <main class="content">
-      <h1 id="page-title">Blog Posts</h1>
-      <p id="blog-intro">My technical and academic notes (updated regularly):</p>
-      
-      <div class="blog-list">
-        <div class="blog-item">
-          <h3 id="post1-title">Python变量</h3>
-          <p class="blog-meta" id="post1-date">2026-03-10</p>
-          <p id="post1-desc">深入探讨Python的变量引用机制、内存管理、可变与不可变对象等核心概念</p>
-          <p><a href="posts/python变量.html">Read More →</a></p>
+      <section class="content-section">
+        <h2 class="section-title">Blog Posts</h2>
+        <div class="blog-list">
+          <div class="blog-item">
+            <h3>Python Variables</h3>
+            <div class="blog-meta">2026-03-10</div>
+            <p>In-depth exploration of Python's variable reference mechanism, memory management, mutable and immutable objects.</p>
+            <a href="posts/python变量.html" class="blog-link">Read more →</a>
+          </div>
+          <div class="blog-item">
+            <h3>Python and Syntactic Sugar</h3>
+            <div class="blog-meta">2026-03-10</div>
+            <p>Detailed explanation of Python syntactic sugar, including variable swapping, decorators, closures and context management.</p>
+            <a href="posts/python与语法糖.html" class="blog-link">Read more →</a>
+          </div>
+          <div class="blog-item">
+            <h3>Getting Started with LLM-based Agents</h3>
+            <div class="blog-meta">2026-01-12</div>
+            <p>Comprehensive guide on building intelligent agents using large language models.</p>
+            <a href="posts/llm.html" class="blog-link">Read more →</a>
+          </div>
         </div>
-        <div class="blog-item">
-          <h3 id="post2-title">Python与语法糖</h3>
-          <p class="blog-meta" id="post2-date">2026-03-10</p>
-          <p id="post2-desc">详解Python中的语法糖，包括变量交换、装饰器、闭包和上下文管理等特性</p>
-          <p><a href="posts/python与语法糖.html">Read More →</a></p>
-        </div>
-        <div class="blog-item">
-          <h3 id="post3-title">Getting Started with GitHub Pages for Academic Websites</h3>
-          <p class="blog-meta" id="post3-date">2024-03</p>
-          <p id="post3-desc">Step-by-step guide to building an academic personal website with GitHub Pages</p>
-          <p><a href="posts/post-1.html">Read More →</a></p>
-        </div>
-        <div class="blog-item">
-          <h3 id="post4-title">Open-Source Development for Academic Research</h3>
-          <p class="blog-meta" id="post4-date">2024-03</p>
-          <p id="post4-desc">How to integrate open-source tools into academic research projects</p>
-          <p><a href="posts/post-2.html">Read More →</a></p>
-        </div>
-      </div>
+      </section>
     </main>
   </div>
 
-  <!-- 页脚 -->
-  <footer class="site-footer" id="site-footer">© 2024 Shuo Liu (Ricardo) | Hosted on GitHub Pages</footer>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Shuo Liu | Hosted on GitHub Pages</p>
+  </footer>
 
-  <!-- 脚本引入 -->
-  <script src="../assets/js/lang.js"></script>
-  <script src="../assets/js/common.js"></script>
+  <script>
+    // Simple theme toggle for blog page
+    const theme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', theme);
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const current = document.body.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      const icon = document.querySelector('#theme-toggle i');
+      icon.className = next === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    });
+    // Update icon on load
+    if (theme === 'dark') {
+      document.querySelector('#theme-toggle i').className = 'fa-solid fa-sun';
+    }
+  </script>
 </body>
 </html>
