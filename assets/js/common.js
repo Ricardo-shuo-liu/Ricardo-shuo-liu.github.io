@@ -54,7 +54,7 @@ function updateLangUI() {
   document.getElementById('nav-about').textContent = nav.about;
   document.getElementById('nav-education').textContent = nav.education;
   document.getElementById('nav-research').textContent = nav.research;
-  document.getElementById('nav-publications').textContent = nav.publications;
+  document.getElementById('nav-current-work').textContent = nav.currentWork;
   document.getElementById('nav-projects').textContent = nav.projects;
   document.getElementById('nav-cv').textContent = nav.cv;
   document.getElementById('nav-blog').textContent = nav.blog;
@@ -86,7 +86,7 @@ function renderContent() {
   renderAbout();
   renderEducation();
   renderResearch();
-  renderPublications();
+  renderCurrentWork();
   renderProjects();
   renderBlog();
 }
@@ -117,38 +117,39 @@ function renderResearch() {
   document.getElementById('research-content').innerHTML = data.content;
 }
 
-function renderPublications() {
-  const data = langConfig.publications[currentLang];
-  document.getElementById('publications-title').textContent = data.title;
-  document.getElementById('publications-content').innerHTML = `
-    <div class="publications-placeholder">
-      <p>${data.placeholder}</p>
+function renderCurrentWork() {
+  const data = langConfig.currentWork[currentLang];
+  document.getElementById('current-work-title').textContent = data.title;
+
+  const container = document.getElementById('current-work-content');
+  container.innerHTML = data.items.map(item => `
+    <div class="project-card">
+      <h4>${item.name}</h4>
+      <p>${item.desc}</p>
+      ${item.url ? `<a href="${item.url}" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>` : ''}
     </div>
-  `;
+  `).join('');
 }
 
 function renderProjects() {
   const data = langConfig.projects[currentLang];
   document.getElementById('projects-title').textContent = data.title;
-  
+
   const container = document.getElementById('projects-content');
-  container.innerHTML = data.categories.map(category => `
-    <div class="projects-category">
-      <h3>${category.name}</h3>
-      <div class="projects-grid">
-        ${category.items.map(project => `
-          <div class="project-card">
-            <h4>${project.name}</h4>
-            <p>${project.desc}</p>
-            <a href="${project.url}" target="_blank" class="project-link">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
-            <span class="project-role">${project.role}</span>
-          </div>
-        `).join('')}
-      </div>
+  container.innerHTML = `
+    <div class="projects-grid">
+      ${data.items.map(project => `
+        <div class="project-card">
+          <h4>${project.name}</h4>
+          <p>${project.desc}</p>
+          <a href="${project.url}" target="_blank" class="project-link">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <span class="project-role">${project.role}</span>
+        </div>
+      `).join('')}
     </div>
-  `).join('');
+  `;
 }
 
 function renderBlog() {
@@ -205,14 +206,17 @@ function initEventListeners() {
   // Language toggle
   document.getElementById('lang-toggle').addEventListener('click', toggleLang);
   
-  // Smooth scroll for nav links
+  // Smooth scroll for anchor nav links only
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     });
   });

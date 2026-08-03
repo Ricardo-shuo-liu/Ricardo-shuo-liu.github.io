@@ -68,6 +68,15 @@ body {
   color: var(--text-primary);
   text-decoration: none;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-logo {
+  height: 28px;
+  width: auto;
+  border-radius: 4px;
 }
 
 .main-nav {
