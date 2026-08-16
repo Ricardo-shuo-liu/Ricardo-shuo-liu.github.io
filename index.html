@@ -8,30 +8,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body data-theme="light">
+<body>
 
   <!-- Header / Navigation -->
   <header class="site-header">
     <div class="nav-container">
-      <a href="#" class="site-title" id="site-title">
+      <a href="#" class="site-title">
         <img src="assets/images/logo.png" alt="Logo" class="site-logo" onerror="this.style.display='none'">
         <span>Shuo Liu</span>
       </a>
       <nav class="main-nav">
-        <a href="#about" class="nav-link" data-section="about" id="nav-about">About</a>
-        <a href="#education" class="nav-link" data-section="education" id="nav-education">Education</a>
-        <a href="#research" class="nav-link" data-section="research" id="nav-research">Research</a>
-        <a href="#current-work" class="nav-link" data-section="current-work" id="nav-current-work">Current Work</a>
-        <a href="#projects" class="nav-link" data-section="projects" id="nav-projects">Projects</a>
-        <a href="cv.pdf" class="nav-link" id="nav-cv" target="_blank">CV</a>
-        <a href="#blog" class="nav-link" data-section="blog" id="nav-blog">Blog</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#publications" class="nav-link">Publications</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="cv.pdf" class="nav-link" target="_blank">CV</a>
       </nav>
-      <div class="header-actions">
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <button id="lang-toggle" class="lang-btn">中文</button>
-      </div>
     </div>
   </header>
 
@@ -41,22 +34,22 @@
     <!-- Sidebar -->
     <aside class="sidebar">
       <img src="assets/images/avatar.png" alt="Shuo Liu" class="avatar">
-      <h2 class="sidebar-name" id="sidebar-name">Shuo Liu</h2>
-      <p class="sidebar-university" id="sidebar-university">Henan University of Economics and Law</p>
-      <div class="sidebar-tags" id="sidebar-tags">
+      <h2 class="sidebar-name">Shuo Liu</h2>
+      <p class="sidebar-university">Henan University of Economics and Law</p>
+      <div class="sidebar-tags">
+        <span class="tag">AI4CO</span>
         <span class="tag">Reinforcement Learning</span>
         <span class="tag">AI Infra</span>
-        <span class="tag">Intelligent Agents</span>
-        <span class="tag">NLP</span>
+        <span class="tag">AI4S</span>
       </div>
-      <ul class="contact-list" id="contact-list">
-        <li><i class="fa-solid fa-location-dot"></i> <span id="contact-location">Zhengzhou, China</span></li>
-        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:13838152117@139.com" id="contact-email">13838152117@139.com</a></li>
-        <li><i class="fa-brands fa-github"></i> <a href="https://github.com/Ricardo-shuo-liu" target="_blank" id="contact-github">GitHub</a></li>
-        <li><i class="fa-solid fa-graduation-cap"></i> <a href="#" target="_blank" id="contact-scholar">Google Scholar</a></li>
-        <li><i class="fa-solid fa-cloud"></i> <a href="https://bsky.app/profile/ricardoshuoliu.bsky.social" target="_blank" id="contact-bluesky">Bluesky</a></li>
-        <li><i class="fa-solid fa-face-smile"></i> <a href="https://huggingface.co/flyRicardo" target="_blank" id="contact-huggingface">Hugging Face</a></li>
-        <li><i class="fa-brands fa-python"></i> <a href="https://pypi.org/user/flyRicardo/" target="_blank" id="contact-pypi">PyPI</a></li>
+      <ul class="contact-list">
+        <li><i class="fa-solid fa-location-dot"></i> Zhengzhou, China</li>
+        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:13838152117@139.com">13838152117@139.com</a></li>
+        <li><i class="fa-brands fa-github"></i> <a href="https://github.com/Ricardo-shuo-liu" target="_blank">GitHub</a></li>
+        <li><i class="fa-solid fa-cloud"></i> <a href="https://bsky.app/profile/ricardoshuoliu.bsky.social" target="_blank">Bluesky</a></li>
+        <li><i class="fa-solid fa-face-smile"></i> <a href="https://huggingface.co/flyRicardo" target="_blank">Hugging Face</a></li>
+        <li><i class="fa-brands fa-python"></i> <a href="https://pypi.org/user/flyRicardo/" target="_blank">PyPI</a></li>
+        <li><i class="fa-solid fa-file-pdf"></i> <a href="cv.pdf" target="_blank">CV</a></li>
       </ul>
     </aside>
 
@@ -65,49 +58,113 @@
 
       <!-- About -->
       <section id="about" class="content-section">
-        <h2 class="section-title" id="about-title">About Me</h2>
-        <div id="about-content"></div>
+        <h2 class="section-title">About Me</h2>
+        <div>
+          <p>I'm Shuo Liu, an undergraduate at <a href="https://www.huel.edu.cn" target="_blank">Henan University of Economics and Law</a>, where I work with Ming Zhang. I'm also a visiting student at <strong>Zhengzhou University</strong>, advised by Prof. Qidong Liu, and I study with Prof. Changcheng Zhao with the aim of applying deep learning to problems in biology.</p>
+          <p>My main interest lies at the intersection of artificial intelligence and operations research, particularly AI for Combinatorial Optimization (AI4CO). Outside research, I enjoy engineering topics such as AI infrastructure, AI application development, compilers, and operating systems.</p>
+        </div>
       </section>
 
       <!-- Education -->
       <section id="education" class="content-section">
-        <h2 class="section-title" id="education-title">Education</h2>
-        <div id="education-content" class="timeline"></div>
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-period">2024.09 – Present</div>
+            <div class="timeline-school">Henan University of Economics and Law (HUEL), Zhengzhou, Henan, China</div>
+            <div class="timeline-detail">Undergraduate Student - School of Data Science and E-Commerce</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">Currently</div>
+            <div class="timeline-school">Zhengzhou University, Zhengzhou, Henan, China</div>
+            <div class="timeline-detail">Visiting Student - Advisor: Prof. Qidong Liu</div>
+          </div>
+        </div>
       </section>
 
-      <!-- Research -->
-      <section id="research" class="content-section">
-        <h2 class="section-title" id="research-title">Research Interests</h2>
-        <div id="research-content"></div>
-      </section>
-
-      <!-- Current Work -->
-      <section id="current-work" class="content-section">
-        <h2 class="section-title" id="current-work-title">Current Work</h2>
-        <div id="current-work-content"></div>
+      <!-- Publications -->
+      <section id="publications" class="content-section">
+        <h2 class="section-title">Publications</h2>
+        <div class="publications-placeholder">
+          <p>No publications yet.</p>
+        </div>
       </section>
 
       <!-- Projects -->
       <section id="projects" class="content-section">
-        <h2 class="section-title" id="projects-title">Projects</h2>
-        <div id="projects-content"></div>
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h4>Deeptracer</h4>
+            <p>AI-driven Python code analysis platform with deep code understanding, runtime profiling, and natural language interaction.</p>
+            <a href="https://github.com/FlowMatrix-HUEL/Deeptracer-alpha" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <span class="project-role">Owner</span>
+          </div>
+          <div class="project-card">
+            <h4>minipy</h4>
+            <p>A Python compiler written in C, implementing lexer, parser, bytecode generation, and VM execution for a Python syntax subset.</p>
+            <a href="https://github.com/Ricardo-shuo-liu/minipy" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <span class="project-role">Owner</span>
+          </div>
+          <div class="project-card">
+            <h4>Tracer</h4>
+            <p>A lightweight intrusive Python function call tracer.</p>
+            <a href="https://github.com/Ricardo-shuo-liu/Tracer" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <span class="project-role">Owner</span>
+          </div>
+          <div class="project-card">
+            <h4>M2x</h4>
+            <p>Lightweight Markdown converter with terminal and web interface, supporting PDF and Word output.</p>
+            <a href="https://github.com/Ricardo-shuo-liu/M2x" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <span class="project-role">Owner</span>
+          </div>
+          <div class="project-card">
+            <h4>PaddlePaddle</h4>
+            <p>Contributor to Baidu's open-source deep learning framework.</p>
+            <a href="https://github.com/PaddlePaddle/Paddle" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <span class="project-role">Contributor</span>
+          </div>
+          <div class="project-card">
+            <h4>RAGFlow</h4>
+            <p>Contributor to an open-source RAG engine.</p>
+            <a href="https://github.com/infiniflow/ragflow" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <span class="project-role">Contributor</span>
+          </div>
+        </div>
       </section>
 
       <!-- Blog -->
       <section id="blog" class="content-section">
-        <h2 class="section-title" id="blog-title">Blog</h2>
-        <div id="blog-content"></div>
+        <h2 class="section-title">Blog</h2>
+        <div class="blog-list">
+          <div class="blog-item">
+            <h3>Python Variables</h3>
+            <div class="blog-meta">2026-03-10</div>
+            <p>In-depth exploration of Python's variable reference mechanism, memory management, mutable and immutable objects.</p>
+            <a href="blog/posts/python变量.html" class="blog-link">Read more →</a>
+          </div>
+          <div class="blog-item">
+            <h3>Python and Syntactic Sugar</h3>
+            <div class="blog-meta">2026-03-10</div>
+            <p>Detailed explanation of Python syntactic sugar, including variable swapping, decorators, closures and context management.</p>
+            <a href="blog/posts/python与语法糖.html" class="blog-link">Read more →</a>
+          </div>
+          <div class="blog-item">
+            <h3>Getting Started with LLM-based Agents</h3>
+            <div class="blog-meta">2026-01-12</div>
+            <p>Comprehensive guide on building intelligent agents using large language models.</p>
+            <a href="blog/posts/llm.html" class="blog-link">Read more →</a>
+          </div>
+        </div>
       </section>
 
     </main>
   </div>
 
   <!-- Footer -->
-  <footer class="site-footer" id="site-footer">
+  <footer class="site-footer">
     <p>&copy; 2026 Shuo Liu | Hosted on GitHub Pages</p>
   </footer>
 
-  <script src="assets/js/lang.js"></script>
-  <script src="assets/js/common.js"></script>
 </body>
 </html>

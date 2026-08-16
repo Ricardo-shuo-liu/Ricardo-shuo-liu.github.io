@@ -7,34 +7,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
-<body data-theme="light">
+<body>
 
   <!-- Header / Navigation -->
   <header class="site-header">
     <div class="nav-container">
       <a href="../index.html" class="site-title">Shuo Liu</a>
       <nav class="main-nav">
-        <a href="../index.html#about" class="nav-link">About</a>
-        <a href="../index.html#education" class="nav-link">Education</a>
-        <a href="../index.html#research" class="nav-link">Research</a>
-        <a href="../index.html#publications" class="nav-link">Publications</a>
-        <a href="../index.html#projects" class="nav-link">Projects</a>
-        <a href="../cv.pdf" class="nav-link" target="_blank">CV</a>
-        <a href="index.html" class="nav-link active">Blog</a>
+        <a href="#posts" class="nav-link active">Blog Posts</a>
       </nav>
       <div class="header-actions">
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <a href="../index.html#blog" class="lang-btn">← Back</a>
+        <a href="../index.html" class="back-link">← Back to Home</a>
       </div>
     </div>
   </header>
 
   <!-- Main Content -->
-  <div class="main-container" style="grid-template-columns: 1fr; max-width: 900px;">
+  <div class="main-container reading-layout">
     <main class="content">
-      <section class="content-section">
+      <section id="posts" class="content-section">
         <h2 class="section-title">Blog Posts</h2>
         <div class="blog-list">
           <div class="blog-item">
@@ -65,22 +56,5 @@
     <p>&copy; 2026 Shuo Liu | Hosted on GitHub Pages</p>
   </footer>
 
-  <script>
-    // Simple theme toggle for blog page
-    const theme = localStorage.getItem('theme') || 'light';
-    document.body.setAttribute('data-theme', theme);
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      const current = document.body.getAttribute('data-theme');
-      const next = current === 'light' ? 'dark' : 'light';
-      document.body.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      const icon = document.querySelector('#theme-toggle i');
-      icon.className = next === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-    });
-    // Update icon on load
-    if (theme === 'dark') {
-      document.querySelector('#theme-toggle i').className = 'fa-solid fa-sun';
-    }
-  </script>
 </body>
 </html>
