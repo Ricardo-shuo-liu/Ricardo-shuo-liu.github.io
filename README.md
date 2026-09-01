@@ -16,6 +16,7 @@ Then open <http://localhost:8000>.
 
 - `index.html` — single-page academic profile
 - `blog/` — blog listing and posts
+- `articles/` — article listing and essays
 - `assets/` — CSS, images, and other static assets
 - `cv.pdf` — downloadable curriculum vitae
 
